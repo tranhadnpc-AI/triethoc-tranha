@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: triethoc-tranha
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .
+    routes:
+      - type: rewrite
+        source: /khao-luan
+        destination: /khao-luan-triet-hoc-thuc-tien-brahman.html
+      - type: rewrite
+        source: /duong-pho
+        destination: /triet-hoc-duong-pho-hoan-thien.html
