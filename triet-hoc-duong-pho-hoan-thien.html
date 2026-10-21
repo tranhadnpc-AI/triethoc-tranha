@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Triết Học Đường Phố: Biện Chứng Giữa Ý Chí Mưu Sinh & Đại Ngã (Brahman)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0a0c10;
+      --bg-surface: #12161f;
+      --bg-card: #181e2b;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(212, 175, 55, 0.3);
+      --gold: #d4af37;
+      --gold-light: #f5e08b;
+      --gold-dark: #aa8422;
+      --cyan: #38bdf8;
+      --crimson: #f43f5e;
+      --emerald: #10b981;
+      --text-main: #e2e8f0;
+      --text-muted: #94a3b8;
+      --text-heading: #f8fafc;
+      --font-serif: 'Merriweather', Georgia, serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --font-title: 'Cinzel', serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: var(--font-serif);
+      font-size: 1.125rem;
+      line-height: 1.85;
+      letter-spacing: -0.003em;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Reading Progress Bar */
+    #progress-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: transparent;
+      z-index: 1000;
+    }
+    #progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--cyan));
+      transition: width 0.1s ease-out;
+    }
+
+    /* Header & Hero */
+    header {
+      padding: 5rem 1.5rem 3.5rem;
+      text-align: center;
+      background: radial-gradient(circle at 50% 20%, #1e2638 0%, var(--bg-primary) 70%);
+      border-bottom: 1px solid var(--border-subtle);
+      position: relative;
+    }
+    .badge {
+      display: inline-block;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid var(--border-accent);
+      padding: 0.4rem 1.2rem;
+      border-radius: 9999px;
+      margin-bottom: 1.8rem;
+      background: rgba(212, 175, 55, 0.05);
+    }
+    h1 {
+      font-family: var(--font-title);
+      font-size: 2.75rem;
+      line-height: 1.2;
+      color: var(--text-heading);
+      max-width: 950px;
+      margin: 0 auto 1.5rem;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+    }
+    h1 span {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subtitle {
+      font-family: var(--font-sans);
+      color: var(--text-muted);
+      font-size: 1.15rem;
+      max-width: 780px;
+      margin: 0 auto 2rem;
+      font-weight: 400;
+    }
+    .meta-bar {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Main Container Layout */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 3.5rem;
+      position: relative;
+    }
+
+    /* Sticky Sidebar TOC */
+    aside {
+      position: sticky;
+      top: 3rem;
+      height: fit-content;
+      font-family: var(--font-sans);
+    }
+    .toc-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .toc-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .toc-list a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+      display: block;
+      line-height: 1.4;
+    }
+    .toc-list a:hover {
+      color: var(--gold-light);
+      transform: translateX(4px);
+    }
+
+    /* Article Content */
+    article {
+      max-width: 780px;
+      font-size: 1.125rem;
+    }
+
+    /* Editorial Elements */
+    p { margin-bottom: 1.6rem; }
+    .drop-cap::first-letter {
+      font-family: var(--font-title);
+      float: left;
+      font-size: 4.8rem;
+      line-height: 0.8;
+      padding-top: 4px;
+      padding-right: 12px;
+      padding-bottom: 4px;
+      color: var(--gold);
+      font-weight: 900;
+    }
+
+    h2 {
+      font-family: var(--font-title);
+      font-size: 1.85rem;
+      color: var(--text-heading);
+      margin: 3.5rem 0 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border-subtle);
+      letter-spacing: 0.03em;
+    }
+    h3 {
+      font-family: var(--font-sans);
+      font-size: 1.35rem;
+      color: var(--gold-light);
+      margin: 2rem 0 1rem;
+      font-weight: 600;
+    }
+
+    /* Highlights & Quotes */
+    blockquote {
+      margin: 2rem 0;
+      padding: 1.5rem 2rem;
+      background: var(--bg-surface);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      color: #cbd5e1;
+    }
+    blockquote cite {
+      display: block;
+      margin-top: 0.75rem;
+      font-style: normal;
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    /* Callout & Cards */
+    .callout-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin: 2rem 0;
+    }
+    .callout-box.danger { border-left: 4px solid var(--crimson); }
+    .callout-box.action { border-left: 4px solid var(--emerald); }
+    .callout-box.dialectic { border-left: 4px solid var(--cyan); }
+    .callout-box h4 {
+      font-family: var(--font-sans);
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--text-heading);
+    }
+
+    /* Diagrams & Code */
+    pre {
+      background: #06080b;
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: #38bdf8;
+      overflow-x: auto;
+      margin: 2rem 0;
+    }
+
+    /* Table Styles */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+    }
+    th, td {
+      padding: 1rem 1.2rem;
+      border: 1px solid var(--border-subtle);
+      text-align: left;
+    }
+    th {
+      background: var(--bg-surface);
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+    tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+
+    /* Key Principles List */
+    .principle-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .principle-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold);
+    }
+    .principle-num {
+      font-family: var(--font-title);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.3rem;
+    }
+    .principle-title {
+      font-family: var(--font-sans);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin-bottom: 0.6rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 4rem 1.5rem;
+      border-top: 1px solid var(--border-subtle);
+      font-family: var(--font-sans);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .container { grid-template-columns: 1fr; }
+      aside { display: none; }
+      h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="progress-container"><div id="progress-bar"></div></div>
+
+  <header>
+    <div class="badge">Đại Luận Cương Triết Học Thực Chiến</div>
+    <h1>TRIẾT HỌC ĐƯỜNG PHỐ:<br><span>BIỆN CHỨNG GIỮA Ý CHÍ MƯU SINH & ĐẠI NGÃ</span></h1>
+    <p class="subtitle">Đưa Brahman từ cõi mây mù hạ cánh xuống mặt đường nhựa; biến từng giờ lao động nhọc nhằn thành thánh lễ tối thượng hòa nhịp cùng Vũ trụ.</p>
+    <div class="meta-bar">
+      <span>Đúc kết Tri thức Nhân loại</span> • 
+      <span>Karl Marx &times; Nietzsche &times; Spinoza &times; Bhagavad Gita</span> • 
+      <span>~5.500 Từ</span>
+    </div>
+  </header>
+
+  <div class="container">
+    <aside>
+      <div class="toc-box">
+        <div class="toc-title">Mục Lục Luận Cương</div>
+        <ul class="toc-list">
+          <li><a href="#phan-1">I. Giải Phẫu Hai Thái Cực</a></li>
+          <li><a href="#phan-2">II. Tái Định Nghĩa Brahman</a></li>
+          <li><a href="#phan-3">III. Lõi Biện Chứng Lao Động</a></li>
+          <li><a href="#phan-4">IV. Cơ Chế Khoa Học Thực Hành</a></li>
+          <li><a href="#phan-5">V. 5 Nguyên Tắc Hành Xử</a></li>
+          <li><a href="#phan-6">VI. Khúc Trường Ca Hành Động</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <article>
+
+      <div class="callout-box dialectic">
+        <h4>SƠ ĐỒ BIỆN CHỨNG HỢP NHẤT (AUFHEBUNG)</h4>
+        <pre>
+[LUẬN ĐỀ (THESIS): Ý CHÍ MƯU SINH]
+Khát vọng vật chất • Cơm áo gạo tiền • Cạnh tranh sinh tồn
+(Năng lượng Dopamine • Ý chí Quyền lực • Lao động sống)
+                        │
+                        │  Xung đột / Tha hóa / Kiệt cùng
+                        ▼
+[PHẢN ĐỀ (ANTITHESIS): BRAHMAN SIÊU VIỆT]
+Trật tự vũ trụ khách quan • Vô ngã • Tự do nội tại
+(Nhận thức tất yếu • Bình thản tâm hồn • Vượt thoát Ego)
+                        │
+                        │  Biện chứng thực nghiệm (Aufhebung)
+                        ▼
+[HỢP ĐỀ (SYNTHESIS): TRIẾT HỌC ĐƯỜNG PHỐ]
+HÀNH ĐỘNG CỰC ĐỘ TRÊN NỀN TẢNG TÂM TRÍ GIẢI THOÁT
+Kiếm tiền bằng bản lĩnh dũng mãnh • Điềm tĩnh trước rủi ro khách quan
+Biến xưởng máy, thương trường, công sở thành đạo tràng tôi luyện!</pre>
+      </div>
+
+      <section id="phan-1">
+        <h2>PHẦN I: GIẢI PHẪU HAI THÁI CỰC BỆNH HOẠN</h2>
+        <p class="drop-cap">S</p><p>uốt hàng nghìn năm, lịch sử tư tưởng nhân loại liên tục bị xé rách bởi hai thái cực đối lập nhau, và cả hai đều đẩy số phận con người vào bi kịch tinh thần lẫn thể xác:</p>
+
+        <h3>1. Căn bệnh phương Tây: Chủ nghĩa duy vật cơ giới và sự tha hóa cùng cực</h3>
+        <p>Phương Tây cận-hiện đại, với sức mạnh của cơ học Newton, chủ nghĩa công nghiệp và chủ nghĩa tư bản tài chính, đã đẩy ý chí chinh phục vật chất lên đỉnh điểm. Nhưng như <strong>Karl Marx</strong> đã chỉ ra trong <em>Bản thảo kinh tế - triết học 1844</em>:</p>
+        <ul>
+          <li>Người lao động bị tách rời khỏi sản phẩm mình làm ra, bị tách rời khỏi bản chất giống loài (<em>Gattungswesen</em>), và trở thành một bánh răng vô hồn trong guồng máy sản xuất.</li>
+          <li>Họ bán rẻ thời gian để đổi lấy đồng tiền, dùng tiền mua sắm điên cuồng nhằm khỏa lấp sự trống rỗng, rồi lại tiếp tục bán thời gian. Đó là chiếc vòng chuột chạy luẩn quẩn (<em>Rat Race</em>), nơi con người sở hữu nhiều tiện nghi hơn nhưng tâm trí bị dày vò bởi chứng trầm cảm, hoảng loạn và sự cô đơn bản thể tột cùng.</li>
+        </ul>
+
+        <h3>2. Căn bệnh phương Đông: Chủ nghĩa yếm thế và sự ngụy biện "buông xả"</h3>
+        <p>Để phản ứng lại sự khắc nghiệt của thực tại, phương Đông suy đồi lại đẻ ra một căn bệnh đối nghịch nguy hiểm không kém: <strong>Sự đào tẩu tinh thần mang danh đạo đức thanh cao</strong>.</p>
+        <p>Những khái niệm thâm sâu như <em>Vô vi</em> (Lão Tử), <em>Vô ngã</em> (Phật giáo), hay <em>Hòa nhập Brahman</em> (Upanishad) bị đám đông biến thành chiếc lá chắn che đậy sự lười biếng, yếu hèn và bất tài:</p>
+
+        <div class="callout-box danger">
+          <h4>VẠCH TRẦN TÂM LÝ RESSENTIMENT (NIETZSCHE)</h4>
+          <p>Kẻ không có năng lực cạnh tranh ngoài xã hội bèn tự an ủi: <em>"Đời là vô thường, bon chen làm gì, tiền bạc là phù du"</em>. Họ tự khoác chiếc áo thanh tịnh thoát tục, nhưng thực chất đó là <strong>Ressentiment (sự căm thù ghen tị của kẻ bất lực)</strong>. Nếu không có người nông dân dầm mưa dãi nắng cày ruộng, người công nhân viết code thâu đêm, người vận chuyển hàng hóa giữa khói bụi thì lấy ai nuôi sống thân xác những kẻ ngồi giảng đạo buông bỏ?</p>
+        </div>
+
+        <blockquote>
+          "Không có sự buông bỏ nào khả thi khi bạn chưa từng sở hữu bất cứ thứ gì. Kẻ chưa từng bước lên võ đài thì không có tư cách nói về việc buông bỏ chiếc đai vô địch!"
+          <cite>— Bản Tuyên Ngôn Triết Học Đường Phố</cite>
+        </blockquote>
+      </section>
+
+      <section id="phan-2">
+        <h2>PHẦN II: TÁI ĐỊNH NGHĨA BRAHMAN – TỪ HUYỀN HỌC ĐẾN KHOA HỌC THỰC TẠI</h2>
+        <p>Muốn ứng dụng triết học vào đời sống, điều đầu tiên phải làm là <strong>giải mã Brahman (Đại ngã) bằng ngôn ngữ duy vật biện chứng và khoa học hiện đại</strong>, không để nó tiếp tục bị trùm trong màn sương huyền bí.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Góc Nhìn Kinh Viện Cổ Điển</th>
+              <th>Khoa Học Biện Chứng Hiện Đại</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Brahman là linh hồn tối cao vô hình, trừu tượng, xa cách đời sống, chỉ tìm thấy khi nhắm mắt nhập định.</td>
+              <td><strong>Brahman = TỰ NHIÊN TOÀN THỂ (Deus sive Natura)</strong>: Hệ thống các quy luật vật lý, sinh học, xã hội và kinh tế khách quan đang vận hành thực tại.</td>
+            </tr>
+            <tr>
+              <td>Trở về Brahman là rời bỏ cõi trần, tiêu diệt dục vọng, phủ nhận thân xác.</td>
+              <td><strong>Trở về Brahman là thấu hiểu quy luật khách quan</strong> để lao động hiệu quả, thích nghi tối ưu và sáng tạo giá trị sinh tồn rực rỡ nhất.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3>1. Brahman dưới lăng kính Spinoza: Deus sive Natura</h3>
+        <p>Triết gia <strong>Baruch Spinoza</strong> (1632–1677) đã đặt nền móng duy lý vững chắc: Không có một Thượng đế có nhân tính ngồi trên trời ban phúc giáng họa. Chỉ có một Thực thể duy nhất vô biên (<em>Substantia</em>), chính là <strong>Tự Nhiên Toàn Thể</strong>. Mọi biến động của thị trường tài chính, lực hấp dẫn, chuỗi cung ứng... đều là biểu hiện tất yếu của Tự Nhiên.</p>
+
+        <h3>2. Brahman và Định luật Entropy: Lao động là Anti-Entropy</h3>
+        <p>Theo Định luật Hai Nhiệt Động Lực Học, mọi hệ thống trong vũ trụ luôn tiến từ trật tự về hỗn loạn (Entropy tăng). Sự sống tồn tại được là nhờ khả năng thu nạp <em>Negative Entropy</em> (Entropy âm). <strong>Ý chí lao động, kiến tạo của con người chính là hiện thân mạnh mẽ nhất của ngọn lửa Brahman nhằm duy trì trật tự chống lại sự phân rã của tự nhiên!</strong></p>
+      </section>
+
+      <section id="phan-3">
+        <h2>PHẦN III: LÕI BIỆN CHỨNG – LAO ĐỘNG LÀ CON ĐƯỜNG VỀ VỚI ĐẠI NGÃ</h2>
+        <p>Làm thế nào để việc kiếm tiền mưu sinh hàng ngày không biến thành sự đày ải mà trở thành con đường đưa con người hòa hợp với Brahman? Câu trả lời nằm ở sự kết hợp giữa <strong>Bhagavad Gita</strong>, <strong>Friedrich Nietzsche</strong> và <strong>Karl Marx</strong>:</p>
+
+        <h3>1. Trực diện chiến đấu: Bài học từ Bhagavad Gita & Nietzsche</h3>
+        <p>Khi hoàng tử Arjuna rụng rời tay chân muốn trốn chạy khỏi chiến trường Kurukshetra để đi tu, Đấng Krishna (hiện thân của Brahman) đã quở trách nghiêm khắc: <em>"Đó là sự yếu hèn, không xứng đáng với một chiến binh! Ngươi bắt buộc phải chiến đấu. Sự giải thoát nằm ở việc chiến đấu dũng mãnh nhưng tâm trí không bị trói buộc bởi kết quả."</em></p>
+        <p>Đây chính là <strong>Amor Fati</strong> (Tình yêu số phận) và <strong>Ý chí Quyền lực (Will to Power)</strong> của Nietzsche: Đón nhận thương trường và cuộc mưu sinh như một đấu trường danh dự để tôi luyện thần kinh thép.</p>
+
+        <h3>2. Lao động cải tạo thế giới: Marx và Bản chất Người</h3>
+        <p>Karl Marx đúc kết: <em>"Các nhà triết học từ trước đến nay chỉ giải thích thế giới bằng nhiều cách khác nhau; song vấn đề là cải tạo thế giới."</em></p>
+        <p>Tiền bạc kiếm được từ mồ hôi và chất xám là <strong>năng lượng thời gian được cô đọng lại</strong>. Dùng năng lượng đó bảo vệ gia đình trước bạo bệnh, tài trợ học hành cho con cái, đó là biểu hiện cao quý nhất của trách nhiệm nhân sinh.</p>
+      </section>
+
+      <section id="phan-4">
+        <h2>PHẦN IV: CƠ CHẾ KHOA HỌC THỰC HÀNH</h2>
+
+        <h3>1. Giải phẫu "Không bám chấp": Khoa học Quản trị Xác suất</h3>
+        <p>Trong lý thuyết quyết định hiện đại (Daniel Kahneman, Annie Duke), "không bám chấp" được định nghĩa lại chính xác:</p>
+        <ul>
+          <li><strong>Kiểm soát 100% Chất lượng Quyết định (Decision Quality):</strong> Nghiên cứu thị trường, quản trị rủi ro, rèn luyện kỹ năng đến mức hoàn hảo nhất.</li>
+          <li><strong>Giải phóng Thiên kiến Kết quả (Outcome Bias):</strong> Thị trường luôn có biến số ngẫu nhiên khách quan. Nếu kết quả không như ý, điềm tĩnh phân tích dữ liệu để sửa đổi, tuyệt đối không để Cortisol (stress) tàn phá hệ thần kinh.</li>
+        </ul>
+
+        <h3>2. Cân bằng Sinh học Thần kinh: Dopamine & Serotonin</h3>
+        <p>Một chiến binh đường phố vận hành não bộ như một cỗ máy tinh vi: Dùng Dopamine để duy trì động lực chinh phục mục tiêu công việc, nhưng dùng Serotonin và hệ đối giao cảm để tĩnh tâm, phục hồi sau giờ làm việc, nhìn nhận bản thân chỉ là một phần nhỏ bé trong tiến trình tiến hóa vĩ đại của Vũ trụ.</p>
+      </section>
+
+      <section id="phan-5">
+        <h2>PHẦN V: HỆ KHUNG 5 NGUYÊN TẮC HÀNH XỬ ĐƯỜNG PHỐ (STREET CODE)</h2>
+
+        <div class="principle-card">
+          <div class="principle-num">Nguyên Tắc I</div>
+          <div class="principle-title">Cấm Tuyệt Đối Sự Ngụy Biện Về Nghèo Khó</div>
+          <p>Nghèo đói do lười biếng và sợ cạnh tranh là thất bại sinh học cần sửa chữa, không phải đức hạnh. Hãy chứng minh năng lực nuôi sống gia đình đàng hoàng trước khi bàn về việc buông bỏ.</p>
+        </div>
+
+        <div class="principle-card">
+          <div class="principle-num">Nguyên Tắc II</div>
+          <div class="principle-title">Biến Nơi Làm Việc Thành Đạo Tràng</div>
+          <p>Brahman nằm ngay trong từng dòng code sạch, từng bản vẽ thiết kế chính xác, từng hợp đồng giữ trọn chữ tín. Sự tận tụy chỉn chu tuyệt đối (Flow State) là hình thức thiền định tối cao.</p>
+        </div>
+
+        <div class="principle-card">
+          <div class="principle-num">Nguyên Tắc III</div>
+          <div class="principle-title">Làm Chủ Xác Suất, Giải Phóng Kỳ Vọng</div>
+          <p>Chuẩn bị cho kịch bản xấu nhất, hành động cho kết quả tốt nhất. Thành công không kiêu ngạo vì cái tôi; thất bại coi như học phí cho tự nhiên, đứng dậy làm lại không than vãn.</p>
+        </div>
+
+        <div class="principle-card">
+          <div class="principle-num">Nguyên Tắc IV</div>
+          <div class="principle-title">Từ Bi Phải Đi Đôi Với Năng Lực Vật Chất</div>
+          <p>Từ bi mà bất lực trước viện phí của cha mẹ, miếng ăn của con cái chỉ là sự vô dụng. Hãy trở thành một chỗ dựa kinh tế và tinh thần vững chắc như ngọn hải đăng giữa bão táp.</p>
+        </div>
+
+        <div class="principle-card">
+          <div class="principle-num">Nguyên Tắc V</div>
+          <div class="principle-title">Nhận Thức Tất Yếu Để Đạt Tới Tự Do Tuyệt Đối</div>
+          <p>Đúng như Engels khẳng định: Tự do là nhận thức được tất yếu khách quan. Hiểu quy luật kinh tế, tâm lý và sinh học để vận hành nhịp nhàng cùng Tự nhiên. Đó là sự hợp nhất của Atman và Brahman.</p>
+        </div>
+      </section>
+
+      <section id="phan-6">
+        <h2>PHẦN VI: LỜI KẾT – KHÚC TRƯỜNG CA CỦA NGƯỜI HÀNH ĐỘNG</h2>
+        <p>Bản lĩnh lớn nhất của một con người không phải là trốn chạy vào một hang đá yên tĩnh, mà là:</p>
+        <blockquote>
+          "Bạn có thể bước vào những cuộc đàm phán gay gắt nhất với tinh thần dũng mãnh của một chiến binh sư tử; nhưng ngay khi bước ra ngoài, bạn có thể ngắm nhìn giọt sương trên lá và cảm nhận sự an lạc tĩnh lặng vô biên của Vũ trụ đang chảy qua từng mạch máu của mình."
+        </blockquote>
+        <p><strong>Thân dấn sâu vào cõi mưu sinh cát bụi, nhưng Tâm tự do tự tại giữa Đại ngã vô biên.</strong></p>
+        <p>Hãy bước xuống mặt đường, đối diện với cuộc đời, và bắt đầu hành động!</p>
+      </section>
+
+    </article>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Học Viện Triết Học Thực Chiến Antigravity. Bản đại luận cương hoàn thiện.</p>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('progress-bar').style.width = scrolled + '%';
+    });
+  </script>
+</body>
+</html>

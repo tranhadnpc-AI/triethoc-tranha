@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khảo Luận Triết Học: Biện Chứng Của Thực Tiễn Lao Động & Sự Quy Hòa Bản Thể Tự Nhiên</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --paper: #161b22;
+      --card-bg: #1c2128;
+      --border: #30363d;
+      --border-accent: #8b949e;
+      --text: #c9d1d9;
+      --text-muted: #8b949e;
+      --text-heading: #f0f6fc;
+      --gold: #d29922;
+      --gold-dim: #9e6a03;
+      --font-body: 'EB Garamond', Georgia, serif;
+      --font-title: 'Cinzel', serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 1.25rem;
+      line-height: 1.8;
+      position: relative;
+    }
+
+    #progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      width: 0%;
+      background: var(--gold);
+      z-index: 999;
+      transition: width 0.1s ease;
+    }
+
+    header {
+      padding: 6rem 2rem 4rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(180deg, #161b22 0%, var(--bg) 100%);
+    }
+
+    .doc-type {
+      font-family: var(--font-title);
+      font-size: 0.85rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: var(--font-title);
+      font-size: 2.5rem;
+      line-height: 1.25;
+      color: var(--text-heading);
+      max-width: 1000px;
+      margin: 0 auto 1.5rem;
+      font-weight: 700;
+    }
+
+    .doc-subtitle {
+      font-style: italic;
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .doc-meta {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .layout {
+      max-width: 1250px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 4rem;
+    }
+
+    aside {
+      position: sticky;
+      top: 3rem;
+      height: fit-content;
+    }
+
+    .toc {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+
+    .toc h3 {
+      font-family: var(--font-title);
+      font-size: 0.9rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+
+    .toc ul { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+    .toc a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    .toc a:hover { color: var(--text-heading); }
+
+    article {
+      max-width: 820px;
+    }
+
+    h2 {
+      font-family: var(--font-title);
+      font-size: 1.85rem;
+      color: var(--text-heading);
+      margin: 4rem 0 1.5rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+      letter-spacing: 0.05em;
+    }
+
+    h3 {
+      font-family: var(--font-title);
+      font-size: 1.35rem;
+      color: var(--gold);
+      margin: 2.5rem 0 1rem;
+    }
+
+    p { margin-bottom: 1.8rem; text-align: justify; }
+
+    blockquote {
+      margin: 2.2rem 0;
+      padding: 1.5rem 2rem;
+      background: var(--paper);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      font-style: italic;
+      color: #e6edf3;
+    }
+
+    blockquote cite {
+      display: block;
+      margin-top: 0.8rem;
+      font-style: normal;
+      font-size: 0.9rem;
+      color: var(--gold);
+      font-family: var(--font-title);
+    }
+
+    .thesis-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.8rem;
+      margin: 2.5rem 0;
+    }
+
+    .thesis-box h4 {
+      font-family: var(--font-title);
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    pre {
+      background: #090d13;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: #79c0ff;
+      overflow-x: auto;
+      margin: 2rem 0;
+    }
+
+    .postulate {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1.6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .postulate-header {
+      font-family: var(--font-title);
+      font-size: 1rem;
+      color: var(--gold);
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+
+    .postulate-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-heading);
+      margin-bottom: 0.8rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 4rem 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 950px) {
+      .layout { grid-template-columns: 1fr; }
+      aside { display: none; }
+      h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="progress"></div>
+
+  <header>
+    <div style="max-width: 1250px; margin: 0 auto 2rem; display: flex; justify-content: flex-start;">
+      <a href="index.html" style="color: var(--gold); text-decoration: none; font-family: var(--font-title); font-size: 0.85rem; letter-spacing: 0.1em; display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.4rem 1rem; border: 1px solid var(--border); border-radius: 6px; background: rgba(210, 153, 34, 0.08);">
+        ← Quay Về Đại Bản Đồ 36 Bài Triết Học (Dashboard)
+      </a>
+    </div>
+    <div class="doc-type">TRACTATUS PHILOSOPHIAE PRACTICAE ET ONTOLOGIAE VIVAE</div>
+    <h1>BIỆN CHỨNG CỦA THỰC TIỄN LAO ĐỘNG VÀ SỰ QUY HÒA BẢN THỂ TỰ NHIÊN</h1>
+    <p class="doc-subtitle">Đúc kết khung luân lý học thực nghiệm cho con người hiện đại thông qua sự dung hợp giữa Chủ nghĩa duy vật lịch sử, Hình học luân lý Spinoza và Triết học hành động Cổ điển</p>
+    <div class="doc-meta">
+      <span>Phương pháp: Biện chứng pháp & Phân tích hiện tượng luận</span>
+      <span>Phạm vi: Luân lý học thực nghiệm (Triết học đường phố)</span>
+      <span>Chuẩn mực: Học thuật Hàn lâm</span>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside>
+      <div class="toc">
+        <h3>Mục Lục Khảo Luận</h3>
+        <ul>
+          <li><a href="#dan-nhap">Dẫn Nhập: Nghịch Biện Hiện Sinh</a></li>
+          <li><a href="#phan-1">I. Bản Thể Luận: Brahman & Tự Nhiên</a></li>
+          <li><a href="#phan-2">II. Tri Thức Luận: Phê Phán Ý Thức Sai Lầm</a></li>
+          <li><a href="#phan-3">III. Biện Chứng: Praxis & Niṣkāma Karma</a></li>
+          <li><a href="#phan-4">IV. Hệ Khung 5 Định Đề Luân Lý</a></li>
+          <li><a href="#ket-luan">Kết Luận: Tổng Hợp Hữu Thể Hành Động</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <article>
+
+      <section id="dan-nhap">
+        <h2>DẪN NHẬP: NGHỊCH BIỆN HIỆN SINH CỦA CON NGƯỜI HIỆN ĐẠI</h2>
+        <p>Tồn tại của con người (<em>Dasein</em>) trong tính cách là một hữu thể bị ném vào thế giới (<em>Geworfenheit</em>) luôn đối diện với một mâu thuẫn lưỡng phân cơ bản trong lòng cấu trúc xã hội đương đại:</p>
+
+        <div class="thesis-box">
+          <h4>Mô Hình Hóa Nghịch Biện Hiện Sinh</h4>
+          <p>$$\text{Nghịch biện Hiện sinh} = \begin{cases} 
+          \textbf{Cực đoan I (Duy vật cơ giới):} & \text{Tha hóa lao động } (\textit{Entfremdung}), \text{ biến thành công cụ, lo âu thường trực.} \\ 
+          \textbf{Cực đoan II (Hư vô tâm linh):} & \text{Ngụy biện buông bỏ, trốn chạy thực tại, phủ nhận quy luật sinh tồn.} 
+          \end{cases}$$</p>
+        </div>
+
+        <p>Một mặt, nếu con người giản lược sự tồn tại của mình thuần túy vào các hoạt động mưu sinh kinh tế mà không có một khung tham chiếu bản thể luận tối hậu, họ tất yếu rơi vào trạng thái tha hóa (<em>Entfremdung</em> theo Karl Marx). Trong trạng thái này, chủ thể bị biến thành khách thể, bị nghiền nát bởi guồng máy phân công lao động và sự bất định của thị trường.</p>
+        <p>Mặt khác, nếu con người tìm kiếm sự giải thoát tinh thần bằng cách phủ định thế giới vật chất, viện dẫn các phạm trù siêu hình như "vô vi", "vô thường" hay "buông xả" một cách phi biện chứng để trốn tránh các nghĩa vụ sinh học và xã hội, họ rơi vào một dạng hư vô luận yếm thế (<em>Passive Nihilism</em> theo Friedrich Nietzsche). Đây là một cấu trúc ý thức sai lầm (<em>False Consciousness</em>), nơi sự bất lực trong việc thích nghi sinh tồn được hợp lý hóa dưới danh nghĩa thanh tịnh đạo đức.</p>
+        <p>Nhiệm vụ của khảo luận này là thiết lập một <strong>sự tổng hợp biện chứng</strong> (<em>Aufhebung</em>): Chứng minh rằng chính thông qua <em>Praxis</em> (thực tiễn hành động sản xuất cụ thể trong đời sống trần thế), con người mới có thể hiện thực hóa sự quy hòa với <em>Brahman</em> (được hiểu là hệ thống tất yếu khách quan của Tự nhiên).</p>
+      </section>
+
+      <section id="phan-1">
+        <h2>PHẦN I: BẢN THỂ LUẬN – GIẢI HÓA KHÁI NIỆM BRAHMAN DƯỚI NGUYÊN LÝ DUY VẬT TỰ NHIÊN</h2>
+
+        <h3>1.1. Từ Siêu Hình Học Siêu Nghiệm Đến Deus sive Natura</h3>
+        <p>Trong tư tưởng Vệ-đà và Áo nghĩa thư (<em>Upaniṣad</em>), <em>Brahman</em> được định nghĩa là bản nguyên tối hậu, thực tại bất khả phân và là nền tảng của mọi hiện tượng giới. Tuy nhiên, qua quá trình kinh viện hóa, khái niệm này thường bị giải thích sai lệch như một thực thể siêu nghiệm tách rời khỏi trần thế.</p>
+        <p>Để phục hồi tính xác thực triết học, khái niệm này cần được soi chiếu qua mệnh đề bản thể luận của <strong>Baruch Spinoza</strong>:</p>
+
+        <p>$$\text{Thực thể duy nhất } (\textit{Substantia}) = \text{Thượng đế hay Tự nhiên } (\textit{Deus sive Natura})$$</p>
+
+        <p>Theo Spinoza, không tồn tại một Thượng đế nhân hình đứng ngoài vũ trụ để điều khiển thế giới. Tự nhiên chính là Thực thể tự nguyên nhân (<em>Causa sui</em>). Mọi hiện tượng trong thế giới hữu hình—từ lực hấp dẫn vật lý, quy luật tiến hóa sinh học, cho đến quy luật kinh tế và thị trường xã hội—đều là các thể chế (<em>Modi</em>) của cùng một Tự nhiên duy nhất.</p>
+        <p>Do đó, về mặt bản thể luận: <strong>Brahman đồng nhất với Tự Nhiên Toàn Thể</strong>. Sự hòa nhập với Brahman không thể là hành vi rút lui vào một trạng thái tâm lý hư vô chủ quan, mà bắt buộc phải là <strong>hành vi nhận thức và thích ứng hoàn toàn với các quy luật khách quan của Tự nhiên đang chi phối sự tồn tại của con người</strong>.</p>
+
+        <h3>1.2. Nguyên Lý Nhiệt Động Lực Học Và Bản Chất Của Tồn Tại Sống</h3>
+        <p>Dưới góc độ vật lý học đương đại, Vũ trụ vận hành theo Định luật thứ hai của Nhiệt động lực học: Trong một hệ thống cô lập, độ hỗn loạn (<strong>Entropy</strong>) luôn có xu hướng gia tăng theo thời gian:</p>
+
+        <p>$$\frac{dS}{dt} \ge 0$$</p>
+
+        <p>Mọi cấu trúc vật chất nếu không được cung cấp năng lượng liên tục đều tiến tới sự phân rã và tiêu vong. Erwin Schrödinger trong <em>What is Life?</em> (1944) đã chỉ ra rằng: Bản chất của một cơ thể sống là liên tục duy trì trạng thái trật tự bằng cách hấp thụ dòng <strong>Entropy âm</strong> (<em>Negative Entropy</em>) từ môi trường thông qua quá trình trao đổi chất.</p>
+        <p>Từ tiền đề khoa học này, ta rút ra kết luận triết học: Sự tồn tại của con người không phải là một trạng thái tĩnh tại mà là một <strong>quá trình vận động phản kháng Entropy</strong>. Hành vi rút lui, đình chỉ lao động, từ chối tích lũy năng lượng và của cải dưới danh nghĩa "an nhiên buông bỏ" thực chất là sự đầu hàng trước xu thế gia tăng Entropy tự nhiên. Ngược lại, <strong>lao động cải tạo môi trường (Praxis) chính là hình thái biểu hiện cao nhất của ý chí duy trì trật tự và sự sống của Tự nhiên</strong>.</p>
+      </section>
+
+      <section id="phan-2">
+        <h2>PHẦN II: TRI THỨC LUẬN VÀ PHÊ PHÁN Ý THỨC SAI LẦM PHƯƠNG ĐÔNG</h2>
+
+        <h3>2.1. Giải Cấu Trúc Khái Niệm "Vô Thường" (Anicca)</h3>
+        <p>Trong Phật giáo nguyên thủy, <em>Anicca</em> (Vô thường) là một nhận định mang tính bản thể luận khách quan: Mọi pháp hữu vi đều vận động và biến đổi không ngừng (<em>Panta rhei</em> theo cách nói của Heraclitus). Tuy nhiên, trong quá trình tiếp nhận lịch sử, khái niệm này đã bị biến dạng thành một tiền đề ngụy biện luân lý:</p>
+
+        <p>$$\text{Tiền đề sai lệch:} \quad \text{Mọi sự đều vô thường và rồi sẽ mất} \implies \text{Mọi nỗ lực hành động đều vô nghĩa.}$$</p>
+
+        <p>Đây là một ngụy biện logic đánh tráo phạm trù: Tính chất hữu hạn của thời gian không hề thủ tiêu giá trị của hành động trong thời gian hiện tại. Ngược lại, chính vì thời gian và sự sống mang tính hữu hạn, giá trị của mỗi hành động thực tiễn nhằm tối ưu hóa điều kiện sinh tồn của cá nhân và giống loài mới đạt tới ý nghĩa cao nhất.</p>
+
+        <h3>2.2. Phả Hệ Học Về Tâm Lý Ressentiment (Nietzsche)</h3>
+        <p>Friedrich Nietzsche trong <em>Zur Genealogie der Moral</em> (1887) đã phát triển phương pháp phả hệ học để vạch trần nguồn gốc tâm lý của hệ thống đạo đức nô lệ (<em>Sklavenmoral</em>): Khi một chủ thể bất lực trong việc khẳng định bản thân trên đấu trường sinh tồn thực tế, cơ chế phòng vệ tâm lý sẽ kích hoạt hiện tượng <strong>Ressentiment</strong> (sự oán hận ngấm ngầm):</p>
+        <ul>
+          <li>Năng lực tạo ra của cải và sức mạnh vật chất bị gán nhãn là "tham lam, tục tĩu, chìm đắm trong vô minh".</li>
+          <li>Sự bất tài, nghèo túng và thụ động được tôn vinh thành "thanh cao, giản dị, giải thoát".</li>
+        </ul>
+        <blockquote>
+          "Một hệ thống luân lý chân chính không thể xây dựng trên nền tảng của sự bất lực. Việc từ bỏ một đối tượng chỉ mang giá trị luân lý khi chủ thể thực sự có khả năng thủ đắc đối tượng đó."
+          <cite>— Nguyên Lý Phê Phán Luân Lý Học</cite>
+        </blockquote>
+      </section>
+
+      <section id="phan-3">
+        <h2>PHẦN III: BIỆN CHỨNG CỦA HÀNH ĐỘNG THỰC TIỄN (PRAXIS) VÀ GIẢI THOÁT</h2>
+
+        <h3>3.1. Praxis Như Là Sự Khẳng Định Bản Chất Giống Loài (Marx)</h3>
+        <p>Trong <em>Bản thảo kinh tế - triết học 1844</em>, Marx định nghĩa lao động không chỉ là công cụ kiếm sống cơ học, mà là phương thức tồn tại cơ bản của con người: Chính trong việc chế tạo thế giới đối tượng mà con người mới thực sự chứng minh bản thân là một hữu thể giống loài.</p>
+        <p>Tiền tệ và của cải tích lũy hợp pháp từ lao động chân chính là <strong>hình thái kết tinh của thời gian sống và năng lực cải tạo thế giới</strong>. Việc chối bỏ cơ sở vật chất là phủ nhận chính điều kiện tiền đề cho mọi hoạt động tư duy và đạo đức.</p>
+
+        <h3>3.2. Niṣkāma Karma (Hành Động Không Vị Kỷ) Trong Bhagavad Gītā</h3>
+        <p>Mâu thuẫn then chốt xuất hiện: Nếu lao động quyết liệt để tạo ra của cải, làm sao tránh khỏi sự trói buộc của lòng tham và sự sụp đổ tâm lý khi đối diện với thất bại? Câu trả lời đã được hệ thống hóa trong chương II, bài kệ 47 của <em>Bhagavad Gītā</em>:</p>
+
+        <p>$$\textit{Karmaṇy-evādhikāras te mā phaleṣu kadācana}$$</p>
+        <p>$$\textit{mā karma-phala-hetur bhūr mā te saṅgo 'stv akarmaṇi}$$</p>
+        <p><em>(Ngươi chỉ có quyền đối với bản thân hành động, tuyệt đối không bao giờ có quyền đối với hoa trái của hành động. Đừng lấy kết quả làm động cơ hành động, nhưng cũng đừng bao giờ bám chấp vào sự không-hành động).</em></p>
+        <p>Học thuyết <strong>Niṣkāma Karma</strong> xác lập một phân định tri thức luận tối quan trọng:</p>
+        <ul>
+          <li><strong>Phạm vi của Ý chí (Chủ thể):</strong> Kiểm soát 100% việc thực thi nghĩa vụ (<em>Dharma</em>), nỗ lực và tính hoàn thiện của kỹ năng lao động.</li>
+          <li><strong>Phạm vi của Tự Nhiên (Khách thể / Brahman):</strong> Hoa trái của hành động (<em>Phala</em>)—tức thành bại, lợi nhuận—là kết quả của các biến số khách quan ngoài sự kiểm soát trực tiếp của ý chí chủ thể.</li>
+        </ul>
+        <p>Sự thống nhất biện chứng: <strong>Con người phải dốc toàn bộ sinh lực để hành động với mức độ hoàn hảo cao nhất, nhưng triệt để giải phóng tâm trí khỏi sự đồng nhất bản ngã vào kết quả ngoại cảnh.</strong></p>
+      </section>
+
+      <section id="phan-4">
+        <h2>PHẦN IV: KHUNG THỰC HÀNH LUÂN LÝ HỌC ĐƯỜNG PHỐ (AXIOLOGY & ETHICS)</h2>
+
+        <div class="postulate">
+          <div class="postulate-header">ĐỊNH ĐỀ LUÂN LÝ I</div>
+          <div class="postulate-title">Tính Bất Khả Biện Minh Của Sự Bất Toàn Sinh Học</div>
+          <p>Nghèo khó và suy đồi phát sinh từ sự lười biếng hoặc từ chối thích nghi không thể được coi là đức hạnh. Một chủ thể đạo đức có nghĩa vụ tiên quyết là đạt tới sự độc lập tự chủ về kinh tế để tự nuôi dưỡng bản thể và những người phụ thuộc, chấm dứt tình trạng ký sinh vào thành quả lao động của xã hội.</p>
+        </div>
+
+        <div class="postulate">
+          <div class="postulate-header">ĐỊNH ĐỀ LUÂN LÝ II</div>
+          <div class="postulate-title">Tính Đồng Nhất Giữa Nơi Làm Việc Và Đạo Tràng Tồn Tại</div>
+          <p>Không tồn tại sự phân biệt bản thể giữa không gian thiêng và không gian phàm. Mọi hành vi lao động đạt tới trạng thái tập trung sâu (<em>Flow state</em>) đều là sự biểu đạt trực tiếp của <em>Brahman</em> thông qua ý thức con người. Sự chỉn chu tuyệt đối trong từng chi tiết của công việc chính là hình thức tu tập chân chính nhất.</p>
+        </div>
+
+        <div class="postulate">
+          <div class="postulate-header">ĐỊNH ĐỀ LUÂN LÝ III</div>
+          <div class="postulate-title">Tách Biệt Biện Chứng Giữa Quyết Định Và Kết Quả</div>
+          <p>Dưới lăng kính của Lý thuyết Quyết định: Con người chịu trách nhiệm đạo đức hoàn toàn về <strong>Chất lượng Quyết định</strong> (<em>Decision Quality</em>), đồng thời giải phóng bản thân khỏi <strong>Thiên kiến Kết quả</strong> (<em>Outcome Bias</em>). Thất bại ngoại cảnh được tiếp nhận như một dữ liệu thực nghiệm để tái cấu trúc hành vi, không biến thành sự sụp đổ của bản ngã.</p>
+        </div>
+
+        <div class="postulate">
+          <div class="postulate-header">ĐỊNH ĐỀ LUÂN LÝ IV</div>
+          <div class="postulate-title">Nguyên Lý Tiền Đề Vật Chất Của Lòng Trắc Ẩn</div>
+          <p>Một lòng trắc ẩn không có năng lực thực thi là một lòng trắc ẩn bất lực. Khả năng bảo vệ gia đình trước bệnh tật, nâng đỡ đồng loại trước khủng hoảng đòi hỏi sự tích lũy thực tế về tài chính, tri thức và quyền năng xã hội. Làm giàu chân chính là sự mở rộng phạm vi của lòng nhân đạo.</p>
+        </div>
+
+        <div class="postulate">
+          <div class="postulate-header">ĐỊNH ĐỀ LUÂN LÝ V</div>
+          <div class="postulate-title">Tự Do Là Sự Nhận Thức Tính Tất Yếu</div>
+          <p>Trạng thái giải thoát cao nhất (<em>Mokṣa</em>) không phải là sự phá vỡ các định luật tự nhiên, mà là sự thấu hiểu trọn vẹn mối liên hệ nhân quả khách quan (Spinoza & Engels): Tự do hệ tại ở sự nhận thức các quy luật tự nhiên và khả năng bắt các quy luật đó tác động cho những mục đích sinh tồn của con người.</p>
+        </div>
+      </section>
+
+      <section id="ket-luan">
+        <h2>KẾT LUẬN: TỔNG HỢP BIỆN CHỨNG CỦA HỮU THỂ HÀNH ĐỘNG</h2>
+        <p>"Triết học đường phố" là sự hồi quy của triết học về với cội nguồn thực tiễn của sự sống. Sự thống nhất giữa Ý chí hành động quyết liệt và Sự quy hòa với Brahman được biểu đạt trong một chân lý duy nhất:</p>
+
+        <div class="thesis-box" style="text-align: center;">
+          <p style="font-size: 1.35rem; font-weight: 600; color: var(--gold); margin-bottom: 0.5rem;">
+            $$\mathbf{Atman\ (Tiểu\ ngã)\ chỉ\ thực\ sự\ hòa\ nhập\ vào\ Brahman\ (Đại\ ngã)}$$
+          </p>
+          <p style="font-size: 1.35rem; font-weight: 600; color: var(--gold); margin-bottom: 0.5rem;">
+            $$\mathbf{khi\ nó\ tự\ biến\ mình\ thành\ một\ ngọn\ lửa\ hành\ động\ sáng\ tạo\ không\ ngừng\ nghỉ}$$
+          </p>
+          <p style="font-size: 1.35rem; font-weight: 600; color: var(--gold);">
+            $$\mathbf{giữa\ lòng\ hiện\ thực\ trần\ thế.}$$
+          </p>
+        </div>
+
+        <p>Con người không cần phải rời bỏ cuộc đời để tìm kiếm sự cứu rỗi. Chính trong tiếng ồn ào của phố thị, trong áp lực của sự sinh tồn, và trong từng giọt mồ hôi của lao động sáng tạo, trật tự vĩnh cửu của Vũ trụ đang tự hoàn tất sứ mệnh của mình.</p>
+      </section>
+
+    </article>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Tractatus Philosophiae Practicae. Bản quyền công trình khảo luận triết học.</p>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('progress').style.width = scrolled + '%';
+    });
+  </script>
+</body>
+</html>

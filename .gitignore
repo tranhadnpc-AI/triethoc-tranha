@@ -1,0 +1,5 @@
+# Ignore temporary background files
+.gemini/
+*.log
+*.tmp
+node_modules/

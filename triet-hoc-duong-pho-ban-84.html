@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Triết Học Đường Phố: Hành Động Quyết Liệt & Trở Về Đại Ngã (Brahman)</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    /* Custom Styling for Longform Editorial */
+    ::-webkit-scrollbar { width: 7px; height: 7px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+
+    .drop-cap::first-letter {
+      float: left;
+      font-size: 3.75rem;
+      line-height: 0.8;
+      font-weight: 900;
+      padding-right: 0.6rem;
+      padding-top: 0.2rem;
+      color: #38bdf8;
+      font-family: Georgia, serif;
+    }
+
+    .toc-link.active {
+      color: #38bdf8;
+      font-weight: 700;
+      border-left-color: #38bdf8;
+    }
+
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white !important; color: black !important; font-size: 11pt; }
+      .print-break { page-break-before: always; }
+    }
+  </style>
+</head>
+<body class="bg-[#0b0f19] text-[#e2e8f0] antialiased min-h-screen font-sans selection:bg-sky-500 selection:text-white">
+
+  <!-- Top Reading Progress Bar -->
+  <div class="fixed top-0 left-0 w-full h-1 bg-slate-800 z-50 no-print">
+    <div id="progressBar" class="h-full bg-gradient-to-r from-sky-500 via-indigo-500 to-amber-500 w-0 transition-all duration-150"></div>
+  </div>
+
+  <!-- Header Navigation Bar -->
+  <nav class="sticky top-0 z-40 bg-[#0b0f19]/90 backdrop-blur-md border-b border-slate-800/80 px-4 py-3 no-print">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-white transition-colors bg-slate-900 border border-slate-800 px-2.5 py-1.5 rounded-lg">
+          <span>&larr;</span> Quay lại Dashboard
+        </a>
+        <span class="text-xs text-slate-500 hidden sm:inline">|</span>
+        <span class="text-xs font-semibold text-slate-300 hidden sm:inline">Chuyên Khảo Đại Luận Triết Học Đương Đại</span>
+      </div>
+
+      <!-- Action buttons -->
+      <div class="flex items-center gap-2">
+        <button onclick="changeFontSize(-1)" title="Giảm cỡ chữ" class="p-1.5 text-xs text-slate-400 hover:text-white bg-slate-900 border border-slate-800 rounded-md">A-</button>
+        <button onclick="changeFontSize(1)" title="Tăng cỡ chữ" class="p-1.5 text-xs text-slate-400 hover:text-white bg-slate-900 border border-slate-800 rounded-md">A+</button>
+        <button onclick="window.print()" title="In hoặc lưu PDF" class="inline-flex items-center gap-1 text-xs text-sky-400 hover:text-sky-300 bg-sky-950/40 border border-sky-800/50 px-2.5 py-1.5 rounded-md font-medium">
+          <span>🖨️</span> In / PDF
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Header Section -->
+  <header class="max-w-4xl mx-auto px-5 pt-12 pb-10 text-center border-b border-slate-800/80">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-950/50 border border-sky-800/50 text-xs text-sky-400 mb-4 font-mono uppercase tracking-wider">
+      <span>⚡ Bản Tuyên Ngôn Triết Học Thực Chiến Đương Đại</span>
+    </div>
+    <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight sm:leading-tight mb-4 font-serif">
+      TRIẾT HỌC ĐƯỜNG PHỐ
+    </h1>
+    <h2 class="text-lg sm:text-2xl font-bold text-sky-400/90 tracking-wide mb-6">
+      Hành Động Quyết Liệt & Sự Trở Về Với Đại Ngã (Brahman)
+    </h2>
+    <p class="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto leading-relaxed italic">
+      Đúc kết toàn bộ tiến trình lịch sử tư tưởng nhân loại để giải quyết bài toán sống còn: Làm thế nào để lao động dũng mãnh nhất giữa áp lực cơm áo gạo tiền mà tâm hồn vẫn đạt tới tự do tối thượng.
+    </p>
+
+    <!-- Meta details -->
+    <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-8 mt-8 text-xs text-slate-400 pt-6 border-t border-slate-800/50 font-mono">
+      <div><span class="text-slate-500">DUNG LƯỢNG:</span> ~5.500 từ</div>
+      <div><span class="text-slate-500">THỜI GIAN ĐỌC:</span> ~25 - 30 phút</div>
+      <div><span class="text-slate-500">ĐỐI TƯỢNG:</span> Người dấn thân thực tế</div>
+      <div><span class="text-slate-500">CHUẨN MỰC:</span> Khảo cứu hàn lâm thực nghiệm</div>
+    </div>
+  </header>
+
+  <!-- Main Article Layout with Sticky Sidebar -->
+  <div class="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+    <!-- Sticky Table of Contents (Desktop - 4 Cols) -->
+    <aside class="hidden lg:block lg:col-span-4 no-print">
+      <div class="sticky top-16 bg-[#111625] border border-slate-800/80 rounded-2xl p-5 space-y-4 max-h-[85vh] overflow-y-auto">
+        <h3 class="text-xs font-bold text-sky-400 uppercase tracking-wider flex items-center gap-2">
+          <span>📜</span> Mục Lục Chuyên Khảo
+        </h3>
+        <nav class="space-y-1 text-xs border-l border-slate-800 pl-3 font-medium text-slate-400">
+          <a href="#prologue" class="toc-link block py-1.5 hover:text-white transition-colors border-l-2 border-transparent -ml-[13px] pl-2.5">Lời Tựa: Bản Tuyên Ngôn Từ Mặt Đường</a>
+          <a href="#chapter-1" class="toc-link block py-1.5 hover:text-white transition-colors border-l-2 border-transparent -ml-[13px] pl-2.5">Chương 1: Tiến Hóa Tri Thức Triết Học</a>
+          <a href="#chapter-2" class="toc-link block py-1.5 hover:text-white transition-colors border-l-2 border-transparent -ml-[13px] pl-2.5">Chương 2: Nghịch Lý Phận Người Đương Đại</a>
+          <a href="#chapter-3" class="toc-link block py-1.5 hover:text-white transition-colors border-l-2 border-transparent -ml-[13px] pl-2.5">Chương 3: Giải Ảo Ngộ Nhận Về "Vô Vi"</a>
+          <a href="#chapter-4" class="toc-link block py-1.5 hover:text-white transition-colors border-l-2 border-transparent -ml-[13px] pl-2.5">Chương 4: Hệ Thống 4 Cột Trụ Thực Chiến</a>
+          <a href="#pillar-1" class="toc-link block py-1 pl-4 text-slate-500 hover:text-white transition-colors">&bull; Cột Trụ 1: Giải Phẫu Căn Tính (Atman vs Ahamkara)</a>
+          <a href="#pillar-2" class="toc-link block py-1 pl-4 text-slate-500 hover:text-white transition-colors">&bull; Cột Trụ 2: Nishkama Karma (Lao Động Vô Tư Lợi)</a>
+          <a href="#pillar-3" class="toc-link block py-1 pl-4 text-slate-500 hover:text-white transition-colors">&bull; Cột Trụ 3: Nhị Phân Kiểm Soát Khắc Kỷ</a>
+          <a href="#pillar-4" class="toc-link block py-1 pl-4 text-slate-500 hover:text-white transition-colors">&bull; Cột Trụ 4: Cư Trần Lạc Đạo Giữa Đô Thị</a>
+          <a href="#chapter-5" class="toc-link block py-1.5 hover:text-white transition-colors border-l-2 border-transparent -ml-[13px] pl-2.5">Chương 5: Quy Trình Tác Chiến 24 Giờ</a>
+          <a href="#comparison" class="toc-link block py-1.5 hover:text-white transition-colors border-l-2 border-transparent -ml-[13px] pl-2.5">Bảng Đối Chiếu: 3 Lối Sống Thực Tế</a>
+          <a href="#epilogue" class="toc-link block py-1.5 hover:text-white transition-colors border-l-2 border-transparent -ml-[13px] pl-2.5">Lời Kết: Đứng Thẳng Giữa Trần Gian</a>
+        </nav>
+
+        <!-- Mini Quote Card -->
+        <div class="pt-4 border-t border-slate-800/80 text-[11px] text-slate-400 italic leading-relaxed">
+          "Trần gian này không phải nhà tù cần trốn chạy; trần gian này là một thao trường vĩ đại để rèn luyện linh hồn."
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Essay Content (8 Cols) -->
+    <article id="articleContent" class="lg:col-span-8 space-y-12 text-slate-300 leading-relaxed text-base sm:text-lg">
+
+      <!-- DIAGRAM OVERVIEW CARD -->
+      <div class="bg-gradient-to-br from-[#111827] to-[#0f172a] border border-sky-500/20 rounded-2xl p-6 shadow-xl no-print">
+        <h4 class="text-xs font-bold text-sky-400 uppercase tracking-wider mb-4 font-mono text-center">
+          Sơ Đồ Biện Chứng: Thống Nhất Hành Động & Đại Ngã
+        </h4>
+        <div class="flex flex-col items-center justify-center space-y-2 text-center text-xs sm:text-sm font-mono">
+          <div class="bg-amber-500/10 border border-amber-500/30 text-amber-300 px-4 py-2 rounded-xl font-bold w-full sm:w-auto">
+            🌌 BRAHMAN / ĐẠI NGÃ (Bản Thể Tối Cao • Tĩnh Lặng • Cội Nguồn Vạn Hữu)
+          </div>
+          <div class="text-sky-400 text-lg">▲</div>
+          <div class="text-[11px] sm:text-xs text-slate-400 space-y-1 py-1">
+            <div>&bull; <b>Nishkama Karma:</b> Hành động mãnh liệt không dính mắc hoa trái</div>
+            <div>&bull; <b>Amor Fati:</b> Biến nghịch cảnh thành chất đốt nuôi dưỡng ý chí</div>
+            <div>&bull; <b>Cư Trần Lạc Đạo:</b> An nhiên giữa bụi trần, không chạy trốn đời</div>
+          </div>
+          <div class="text-sky-400 text-lg">▼</div>
+          <div class="bg-sky-500/10 border border-sky-500/30 text-sky-300 px-4 py-2 rounded-xl font-bold w-full sm:w-auto">
+            ⚒️ LAO ĐỘNG / HÀNH ĐỘNG (Cơm Áo Gạo Tiền • Kỷ Luật • Chiến Đấu Thực Tế)
+          </div>
+        </div>
+      </div>
+
+      <!-- PROLOGUE -->
+      <section id="prologue" class="space-y-4">
+        <div class="text-xs font-bold text-sky-400 uppercase tracking-widest font-mono">Lời Tựa</div>
+        <h2 class="text-2xl sm:text-3xl font-black text-white font-serif tracking-tight">
+          Bản Tuyên Ngôn Từ Mặt Đường – Giải Phóng Triết Học Khỏi Tháp Ngà
+        </h2>
+        <div class="space-y-4 leading-relaxed">
+          <p class="drop-cap">
+            Triết học chưa từng được sinh ra trong các phòng hội thảo gắn máy lạnh, cũng không thuộc về những giáo sư đeo kính dày cộm tranh cãi về các danh từ trừu tượng để lấy điểm trích dẫn học thuật.
+          </p>
+          <p>
+            Triết học nguyên bản nhất của loài người sinh ra <b>ngay trên mặt đất lấm bùn và bụi bặm của đường phố</b>:
+          </p>
+          <ul class="list-disc list-outside pl-5 space-y-2 text-slate-300 text-sm sm:text-base">
+            <li><b>Socrates</b> không mở trường thu tiền; ông đi chân đất khắp chợ cá, lò rèn, xưởng gốm của thành Athens để cật vấn những người thợ, những chính khách và binh lính về công lý và cái chết.</li>
+            <li><b>Diogenes xứ Sinoe</b> sống trong chiếc chum vỡ ở quảng trường Corinth, rọi đèn pin giữa ban ngày để tìm kiếm một "con người đích thực" và thản nhiên bảo hoàng đế vĩ đại Alexander Đại đế: <i>"Hãy đứng tránh ra một bên, ngài đang che mất ánh nắng mặt trời của tôi!"</i>.</li>
+            <li><b>Tất-đạt-đa Cồ-đàm</b> từ bỏ cung vàng điện ngọc, đi bộ ròng rã suốt 45 năm trên những con đường bụi cát sông Hằng, đối thoại với từ tướng cướp Angulimala đến những người gánh phân cùng khổ.</li>
+            <li><b>Lão Tử</b> cưỡi trâu đi về phía Tây ải Hàm Cốc, gửi lại năm ngàn chữ rồi biến mất vào cát bụi trần gian.</li>
+            <li><b>Vua Trần Thái Tông và Trần Nhân Tông</b> không trốn tiệt trên non cao Yên Tử; các ngài trực tiếp lãnh đạo quân dân đánh tan đế quốc Mông Cổ hung hãn nhất hành tinh rồi mới về dựng phái Trúc Lâm "Cư trần lạc đạo".</li>
+          </ul>
+          <p>
+            Nhưng qua nhiều thế kỷ, triết học đã bị bắt cóc. Nó bị biến thành thứ "trang sức chữ nghĩa" của giới quý tộc, một đống lý thuyết hàn lâm kinh viện xa rời thực tế. Người ta tranh luận về "Vô ngã" trong khi vẫn ganh ghét từng đồng lương; người ta thao thao bất tuyệt về "Vô vi" để ngụy biện cho thói lười biếng, sợ hãi áp lực cuộc đời; người ta trích dẫn Kant, Hegel, Nietzsche để làm sang trang cá nhân nhưng lại hoàn toàn gục ngã trước một biến cố nhỏ của gia đình hay công việc.
+          </p>
+          <blockquote class="border-l-4 border-sky-500 bg-slate-900/60 p-4 rounded-r-xl italic text-sky-200 text-base sm:text-lg my-6">
+            "Triết học đường phố (Street Philosophy) ra đời để đập tan sự giả tạo đó. Nó đặt ra một câu hỏi sống còn duy nhất: Làm thế nào để một con người có thể LAO ĐỘNG VÀ HÀNH ĐỘNG MẠNH MẼ NHẤT mà tâm hồn vẫn TỰ DO TUYỆT ĐỐI, hòa nhập trọn vẹn với BRAHMAN (Đại ngã)?"
+          </blockquote>
+          <p>
+            Bài luận này không dành cho những kẻ thích triết lý suông để trốn đời. Đây là <b>bản cẩm nang tác chiến nội tâm</b> dành cho những chiến binh đang ngày ngày thức dậy mưu sinh trên đường phố.
+          </p>
+        </div>
+      </section>
+
+      <!-- CHAPTER 1 -->
+      <section id="chapter-1" class="space-y-4 pt-6 border-t border-slate-800">
+        <div class="text-xs font-bold text-sky-400 uppercase tracking-widest font-mono">Chương 1</div>
+        <h2 class="text-2xl sm:text-3xl font-black text-white font-serif tracking-tight">
+          Bản Chất Tiến Hóa Của Tri Thức: Kế Thừa Cái Đúng, Đập Vỡ Cái Sai Để Hoàn Thiện
+        </h2>
+        <div class="space-y-4 leading-relaxed">
+          <p>
+            Tri thức của nhân loại không phải là một pho kinh bất biến đóng đinh trên tường. Lịch sử triết học chính là lịch sử của <b>Sự Kế Thừa Biện Chứng (Aufhebung)</b> của Hegel: Kế thừa hạt nhân hợp lý, phá bỏ lớp vỏ hạn hẹp lỗi thời, để nâng nhận thức lên một tầm cao mới.
+          </p>
+          <p>
+            Mỗi giai đoạn văn minh đều đóng góp một viên gạch quý, nhưng đồng thời cũng để lại những hạt sạn nguy hiểm:
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+            <div class="bg-slate-900/80 border border-slate-800 p-4 rounded-xl">
+              <h4 class="font-bold text-sky-400 text-sm mb-1">1. Hy Lạp Cổ Đại</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                <b>Đóng góp:</b> Logos và tư duy phản biện logic. <br>
+                <b>Hạn chế đập bỏ:</b> Coi thường lao động chân tay, coi tầng lớp nô lệ và người thợ là hạ đẳng so với quý tộc nhàn rỗi.
+              </p>
+            </div>
+            <div class="bg-slate-900/80 border border-slate-800 p-4 rounded-xl">
+              <h4 class="font-bold text-sky-400 text-sm mb-1">2. Ấn Độ Cổ Đại</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                <b>Đóng góp:</b> Phát hiện Atman chính là Brahman, giải ảo cái tôi vị kỷ (Ahamkara). <br>
+                <b>Hạn chế đập bỏ:</b> Thoái hóa thành chủ nghĩa yếm thế cam chịu số phận và hệ thống đẳng cấp bất công.
+              </p>
+            </div>
+            <div class="bg-slate-900/80 border border-slate-800 p-4 rounded-xl">
+              <h4 class="font-bold text-sky-400 text-sm mb-1">3. Trung Hoa (Nho & Đạo)</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                <b>Đóng góp:</b> Tinh thần nhập thế trách nhiệm (Nho) & nghệ thuật hòa điệu tự nhiên (Đạo). <br>
+                <b>Hạn chế đập bỏ:</b> Bị ngộ nhận thành thói vô vi lười biếng hoặc xiềng xích lễ giáo kìm kẹp cá nhân.
+              </p>
+            </div>
+            <div class="bg-slate-900/80 border border-slate-800 p-4 rounded-xl">
+              <h4 class="font-bold text-sky-400 text-sm mb-1">4. Cận - Hiện Đại Phương Tây</h4>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                <b>Đóng góp:</b> Khoa học thực nghiệm, tự khẳng định mình qua lao động (Marx), ý chí dũng cảm (Nietzsche). <br>
+                <b>Hạn chế đập bỏ:</b> Bẫy tiêu thụ mù quáng biến con người thành cỗ máy kiệt sức (Burnout), mất gốc tâm linh.
+              </p>
+            </div>
+          </div>
+          <p>
+            <b>Sự tích lũy và hoàn thiện ở đây là gì?</b> Triết học đường phố nhặt lấy những mảnh ghép tốt nhất: Lấy <i>Bản thể luận siêu việt của phương Đông</i> (sự bình an, vô ngã, hòa nhập với Brahman) làm Trọng tâm Nền móng Nội tâm; đồng thời lấy <i>Phương pháp tư duy duy lý, khoa học và tinh thần hành động quyết liệt của phương Tây</i> làm Công cụ Tác chiến Thực tế.
+          </p>
+        </div>
+      </section>
+
+      <!-- CHAPTER 2 -->
+      <section id="chapter-2" class="space-y-4 pt-6 border-t border-slate-800">
+        <div class="text-xs font-bold text-sky-400 uppercase tracking-widest font-mono">Chương 2</div>
+        <h2 class="text-2xl sm:text-3xl font-black text-white font-serif tracking-tight">
+          Nghịch Lý Phận Người Đương Đại: Cuộc Giằng Xé Giữa "Cỗ Máy Lao Động" Và "Khát Vọng Tự Do"
+        </h2>
+        <div class="space-y-4 leading-relaxed">
+          <p>
+            Hãy nhìn vào một người bình thường đang sống giữa một thành phố hiện đại: Buổi sáng thức dậy, lao vào dòng xe kẹt cứng, đối mặt với deadline, khách hàng, sếp, hóa đơn tiền nhà, tiền học của con cái. Khi đó, tâm trí anh ta thường sập vào một trong hai cái bẫy hủy diệt:
+          </p>
+          <div class="space-y-4">
+            <div class="bg-rose-950/20 border border-rose-900/40 p-5 rounded-xl">
+              <h4 class="text-base font-bold text-rose-300 mb-2">Cái bẫy thứ nhất: "Con chuột chạy trong vòng quay" (The Rat Race & Tha Hóa)</h4>
+              <p class="text-sm leading-relaxed text-slate-300">
+                Đây là tình trạng mà Karl Marx gọi là <b>Sự Tha Hóa Lao Động (Entfremdung)</b>. Con người lao động chỉ vì nỗi sợ hãi: Sợ bị sa thải, sợ bị coi là kẻ thất bại. Anh ta đồng nhất giá trị bản thân với số dư tài khoản, chức danh trên danh thiếp, hiệu xe đang lái. Khi làm việc thì mơ đến lúc nghỉ; khi nghỉ ngơi thì lo lắng về công việc ngày mai. Kết quả: Kiệt sức (*Burnout*), trầm cảm, trở thành một "Thây ma triết học" (P-Zombie) vô hồn giữa rừng bê tông.
+              </p>
+            </div>
+
+            <div class="bg-amber-950/20 border border-amber-900/40 p-5 rounded-xl">
+              <h4 class="text-base font-bold text-amber-300 mb-2">Cái bẫy thứ hai: "Chủ nghĩa Thoát Ly Giả Triết Học" (Spiritual Bypassing & Nằm Yên Độc Hại)</h4>
+              <p class="text-sm leading-relaxed text-slate-300">
+                Nhìn thấy sự kiệt sức của cái bẫy thứ nhất, một bộ phận quay sang tìm kiếm các trào lưu "chữa lành" bề mặt hoặc triết lý "nằm yên" (*Tang ping*). Họ đọc lõm bõm vài câu về "Vô vi", "Tùy duyên", "Buông xả" rồi biến nó thành tấm lá chắn bao biện cho sự hèn nhát, lười biếng và bất lực trước thử thách đời sống. Khi hóa đơn tiền viện phí của cha mẹ ập đến, toàn bộ thứ "an nhiên rởm" đó lập tức vỡ vụn thành tro bụi.
+              </p>
+            </div>
+          </div>
+          <p class="pt-2">
+            Triết học đường phố từ chối cả hai thái cực bệnh hoạn trên để mở ra <b>Con đường thứ ba</b>: Hành động dũng mãnh nhất bằng đôi bàn tay của một đấu sĩ, nhưng nội tâm an nhiên tự tại tuyệt đối của một bậc giác ngộ.
+          </p>
+        </div>
+      </section>
+
+      <!-- CHAPTER 3 -->
+      <section id="chapter-3" class="space-y-4 pt-6 border-t border-slate-800">
+        <div class="text-xs font-bold text-sky-400 uppercase tracking-widest font-mono">Chương 3</div>
+        <h2 class="text-2xl sm:text-3xl font-black text-white font-serif tracking-tight">
+          Giải Ảo Sự Ngộ Nhận Về "Vô Vi" – Phê Phán Chủ Nghĩa Nằm Yên
+        </h2>
+        <div class="space-y-4 leading-relaxed">
+          <p>
+            Chữ <b>Vô Vi (無為 - Wu Wei)</b> trong *Đạo Đức Kinh* của Lão Tử là một trong những khái niệm bị hiểu sai lệch tai hại nhất trong toàn bộ văn hóa Á Đông.
+          </p>
+          <div class="bg-slate-900/80 border border-slate-800 p-5 rounded-xl space-y-3">
+            <h4 class="font-bold text-sky-400 text-sm">Vô Vi Không Phải Là "Không Làm Gì Cả"!</h4>
+            <p class="text-sm text-slate-300 leading-relaxed">
+              Trong Hán cổ, <i>Vi (為)</i> là làm một cách gượng ép, dùng mưu mô vị kỷ cưỡng bách tự nhiên. Chữ <i>Vô (無)</i> là phủ định sự gượng ép đó. Do đó, <b>Vô Vi chính xác là: Hành động thuận theo quy luật khách quan, hành động với hiệu suất tối đa mà không gây xung đột nội tâm</b>.
+            </p>
+            <p class="text-sm text-slate-300 leading-relaxed italic bg-slate-950/60 p-3 rounded-lg border border-slate-800/80">
+              Hãy nhìn một vận động viên siêu sao như Michael Jordan hay Kobe Bryant khi bước vào trạng thái <b>Dòng Chảy (Flow State)</b>: Cơ thể di chuyển xé gió, cơ bắp căng tràn, đường bóng chuẩn xác từng milimet (Hành động cực độ). Nhưng trong tâm trí họ lúc đó tĩnh lặng như mặt hồ mùa thu: Họ không toan tính tiền quảng cáo, không sợ thua, không tự mãn. <b>ĐÓ CHÍNH LÀ VÔ VI!</b>
+            </p>
+          </div>
+          <p>
+            Sự tương đồng kỳ diệu này xuất hiện trong <i>Bhagavad Gita</i>: Khi dũng sĩ Arjuna buông cung khóc lóc đòi trốn vào rừng tu hành vì sợ hãi trận chiến Kurukshetra, Đấng Krishna đã nghiêm khắc quở trách chàng là hèn nhát và truyền dạy bài học tối thượng về <b>Nishkama Karma (Hành động vô tư lợi)</b>:
+          </p>
+          <blockquote class="border-l-4 border-amber-500 bg-slate-900/60 p-4 rounded-r-xl italic text-amber-200 text-base my-4">
+            "Karmanye vadhikaraste ma phaleshu kadachana"<br>
+            (Ngươi có quyền hành động, nhưng ngươi tuyệt đối không có quyền đòi hỏi nơi hoa trái của hành động! Đừng bao giờ lấy kết quả làm động cơ, nhưng cũng đừng bao giờ đắm chìm trong sự bất động lười biếng! - Bhagavad Gita, II.47).
+          </blockquote>
+          <p>
+            Ngươi <b>PHẢI</b> hành động với 100% sinh lực; nhưng ngươi <b>KHÔNG ĐƯỢC</b> làm nô lệ cho hoa trái của hành động. Khi làm việc với tinh thần đó, lao động trở thành buổi lễ phụng sự thiêng liêng đưa bạn về với Brahman.
+          </p>
+        </div>
+      </section>
+
+      <!-- CHAPTER 4 -->
+      <section id="chapter-4" class="space-y-6 pt-6 border-t border-slate-800">
+        <div class="text-xs font-bold text-sky-400 uppercase tracking-widest font-mono">Chương 4</div>
+        <h2 class="text-2xl sm:text-3xl font-black text-white font-serif tracking-tight">
+          Hệ Thống 4 Cột Trụ Thực Chiến Của Triết Học Đường Phố
+        </h2>
+
+        <!-- PILLAR 1 -->
+        <div id="pillar-1" class="bg-slate-900/70 border border-slate-800 p-6 rounded-2xl space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded bg-sky-500/20 text-sky-400 text-xs font-bold font-mono">CỘT TRỤ 1</span>
+            <h3 class="text-lg font-bold text-white font-serif">Giải Phẫu Căn Tính: Bạn Không Phải Là Chức Danh Trên Danh Thiếp</h3>
+          </div>
+          <div class="text-sm sm:text-base space-y-3 text-slate-300">
+            <p>
+              Trong triết học Vệ-đà, sai lầm căn bản nhất dẫn đến toàn bộ bi kịch và nỗi sợ hãi của con người là sự nhầm lẫn giữa <b>Ahamkara</b> và <b>Atman</b>:
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm my-3">
+              <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
+                <span class="text-rose-400 font-bold block mb-1">Ahamkara (Bản ngã giả tạo / Ego):</span>
+                Tên họ, bằng cấp, số dư tài khoản, chức danh giám đốc hay nhân viên, xe cộ, sự tung hô của người đời. Ahamkara luôn run rẩy sợ hãi vì nó biết nó là giả tạo và có thể biến mất bất cứ lúc nào sau một biến cố kinh tế.
+              </div>
+              <div class="bg-slate-950 p-3 rounded-xl border border-slate-800">
+                <span class="text-emerald-400 font-bold block mb-1">Atman (Chân ngã / Đại ngã nội tại):</span>
+                Người Quan Sát Thuần Túy (*The Pure Witness / Sakshi*) nằm sâu thẳm bên trong. Đó là khoảng không ý thức tĩnh lặng quan sát mọi suy nghĩ dâng lên rồi tan biến. Atman không thể giàu lên nhờ tiền, và không thể bị tổn thương bởi lời chê bai.
+              </div>
+            </div>
+            <p>
+              <b>Ứng dụng trên đường phố:</b> Khi bước vào một cuộc họp căng thẳng hay đàm phán hợp đồng, hãy tự nhắc nhở: <i>"Tôi đang khoác lên mình chiếc áo giáp của một người lao động, tôi đang đóng vai một nhân viên/một người bán hàng để chơi trò chơi xã hội này. Nhưng BẢN CHẤT CỐT LÕI CỦA TÔI là Người Quan Sát tĩnh lặng"</i>. Khi không còn đồng nhất tính mạng tinh thần với thành bại của cuộc gặp, bạn bỗng mất đi sự sợ hãi khúm núm. Bạn trở nên điềm tĩnh lạ lùng, mắt nhìn thẳng, giọng trầm ấm và tư duy sắc bén như lưỡi kiếm!
+            </p>
+          </div>
+        </div>
+
+        <!-- PILLAR 2 -->
+        <div id="pillar-2" class="bg-slate-900/70 border border-slate-800 p-6 rounded-2xl space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400 text-xs font-bold font-mono">CỘT TRỤ 2</span>
+            <h3 class="text-lg font-bold text-white font-serif">Nishkama Karma: Lao Động Dũng Mãnh Nhất Nhưng Buông Bỏ Kết Quả</h3>
+          </div>
+          <div class="text-sm sm:text-base space-y-3 text-slate-300">
+            <p>
+              Làm thế nào để làm việc 12 tiếng một ngày mà không bị stress hay kiệt sức? Bí mật nằm ở việc <b>tách rời 100% nỗ lực cho tiến trình khỏi sự lo âu dính mắc vào kết quả ngoại tại</b>:
+            </p>
+            <ul class="list-disc list-outside pl-5 space-y-2 text-sm">
+              <li><b>Kẻ nô lệ kết quả:</b> Viết báo cáo thì tâm mơ được sếp khen; bán hàng thì tâm ở số tiền hoa hồng. Vì tâm trí luôn phóng tới tương lai, anh ta cảm thấy hành động ở hiện tại là một sự đày ải, một phương tiện đau khổ để đạt mục đích. Khi kết quả không như ý, anh ta suy sụp và cay đắng.</li>
+              <li><b>Chiến binh hành động vô tư lợi:</b> Biến chính <b>Hành Động Hiện Tại Thành Cứu Cánh Tối Thượng</b>. Khi viết code, người kỹ sư dồn 100% sự tinh tế vào từng dòng lệnh như nghệ sĩ điêu khắc; khi lái xe, người tài xế dồn trọn tâm trí cho sự an toàn và êm ái của hành khách.</li>
+            </ul>
+            <p>
+              Khi bạn giải phóng được <b>90% năng lượng não bộ</b> vốn bị lãng phí cho sự lo âu vẩn vơ (<i>"Lỡ thất bại thì sao? Người ta sẽ nghĩ gì?"</i>), hiệu suất lao động của bạn tăng vọt lên mức tối đa một cách hoàn toàn tự nhiên.
+            </p>
+          </div>
+        </div>
+
+        <!-- PILLAR 3 -->
+        <div id="pillar-3" class="bg-slate-900/70 border border-slate-800 p-6 rounded-2xl space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded bg-amber-500/20 text-amber-400 text-xs font-bold font-mono">CỘT TRỤ 3</span>
+            <h3 class="text-lg font-bold text-white font-serif">Bộ Lọc Khắc Kỷ La Mã: Nhị Phân Kiểm Soát Thực Chiến</h3>
+          </div>
+          <div class="text-sm sm:text-base space-y-3 text-slate-300">
+            <p>
+              Xe bạn sẽ thủng lốp khi trời mưa; đối tác sẽ lật lọng; thị trường chứng khoán sẽ sụp đổ; cấp trên có thể đối xử bất công. Nếu không có vũ khí triết học để tự vệ, bạn sẽ trở thành một con rối cảm xúc giận dữ và căm thù. Vũ khí tự vệ đó là <b>Nhị Phân Kiểm Soát (Dichotomy of Control)</b> của Epictetus:
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm my-3 font-mono">
+              <div class="bg-slate-950 p-3 rounded-xl border border-sky-800/40">
+                <span class="text-sky-400 font-bold block mb-1 font-sans">NHÓM A (100% Kiểm Soát Được):</span>
+                &bull; Nỗ lực & đạo đức làm việc của bạn.<br>
+                &bull; Thái độ & phản ứng của bạn trước nghịch cảnh.<br>
+                &bull; Sự trung thực & lòng dũng cảm của bạn.<br>
+                &rarr; <i>DÀNH 100% NĂNG LƯỢNG CHO NHÓM NÀY!</i>
+              </div>
+              <div class="bg-slate-950 p-3 rounded-xl border border-rose-800/40">
+                <span class="text-rose-400 font-bold block mb-1 font-sans">NHÓM B (0% Kiểm Soát Được):</span>
+                &bull; Nền kinh tế suy thoái hay hưng thịnh.<br>
+                &bull; Ý kiến phán xét hay đố kỵ của người khác.<br>
+                &bull; Thời tiết, kẹt xe, dịch bệnh, thị trường.<br>
+                &rarr; <i>TUYỆT ĐỐI BUÔNG XẢ &bull; 0% CẢM XÚC TIÊU CỰC!</i>
+              </div>
+            </div>
+            <p>
+              Bất cứ khi nào sự cố ập đến, hãy hỏi ngay câu hỏi của một triết gia đường phố: <b>"Trong đống đổ nát này, điều gì là thứ DUY NHẤT nằm trong quyền kiểm soát của ta ngay lúc này?"</b>. Làm ngay việc đó với sự điềm tĩnh sắt đá. Toàn bộ phần còn lại thuộc Nhóm B: Hãy đón nhận bằng tinh thần <b>Amor Fati (Yêu lấy định mệnh)</b> của Nietzsche: Ngọn lửa lớn không sợ gió bão; gió bão chỉ làm ngọn lửa bùng cháy dữ dội hơn!
+            </p>
+          </div>
+        </div>
+
+        <!-- PILLAR 4 -->
+        <div id="pillar-4" class="bg-slate-900/70 border border-slate-800 p-6 rounded-2xl space-y-4">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-0.5 rounded bg-purple-500/20 text-purple-400 text-xs font-bold font-mono">CỘT TRỤ 4</span>
+            <h3 class="text-lg font-bold text-white font-serif">Cư Trần Lạc Đạo: Nghệ Thuật Neo Tâm Trở Về Brahman Giữa Khói Bụi</h3>
+          </div>
+          <div class="text-sm sm:text-base space-y-3 text-slate-300">
+            <p>
+              Nhiều người lầm tưởng muốn "về với Brahman" hay "ngộ đạo" thì phải bỏ việc lên núi cạo đầu gõ mõ. Nếu sự bình an của bạn chỉ tồn tại được trong phòng thiền êm ái và lập tức tan biến ngay khi bước ra đường kẹt xe bấm còi inh ỏi, thì <b>thứ bình an đó là đồ giả mạo trong lồng kính yếu ớt</b>.
+            </p>
+            <p>
+              Phật hoàng Trần Nhân Tông đã đúc kết trong <i>Cư Trần Lạc Đạo Phú</i>: <i>"Gia trung hữu bảo hưu tầm mịch / Đối cảnh vô tâm mạc vấn thiền"</i> (Báu vật sẵn trong nhà đừng nhọc công tìm kiếm đâu xa; đứng trước cảnh trần mà tâm không dính mắc thì việc gì phải đi hỏi han về thiền nữa!).
+            </p>
+            <p>
+              <b>Kỹ thuật "Neo Tâm Trong Lao Động":</b>
+            </p>
+            <ol class="list-decimal list-outside pl-5 space-y-2 text-sm">
+              <li><b>Chấm dứt phân mảnh (Ekagrata):</b> Rửa bát chỉ có bát; gõ phím chỉ có phím. Khi Thân và Tâm không bị tách rời làm đôi, bạn đang chạm vào Brahman.</li>
+              <li><b>Cảm nhận không gian tĩnh lặng đằng sau âm thanh:</b> Ngay giữa tiếng còi xe giờ tan tầm, hướng một phần chú ý vào <i>Khoảng không gian bao la đang dung chứa toàn bộ âm thanh đó</i>. Tiếng còi xe sinh rồi diệt; Không Gian chứa nó thì không bao giờ suy chuyển. Tâm bạn chính là Không Gian đó.</li>
+              <li><b>Dâng hiến hành động (Ishvara Pranidhana):</b> Nhìn công việc bạn làm không phải để mưu cầu tư lợi nhỏ mọn, mà như một mắt xích phụng sự sự vận hành của toàn thể nhân loại. Hành động với tâm thế phụng sự đại cuộc chính là cánh cửa tối thượng để hòa tan Tiểu ngã vào Đại ngã.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHAPTER 5 -->
+      <section id="chapter-5" class="space-y-4 pt-6 border-t border-slate-800">
+        <div class="text-xs font-bold text-sky-400 uppercase tracking-widest font-mono">Chương 5</div>
+        <h2 class="text-2xl sm:text-3xl font-black text-white font-serif tracking-tight">
+          Quy Trình Tác Chiến 24 Giờ Của Một "Triết Gia Đường Phố"
+        </h2>
+        <div class="space-y-4 leading-relaxed text-sm sm:text-base">
+          <p>
+            Dưới đây là thời khóa biểu tác chiến cụ thể từng ngày giúp bạn hiện thực hóa sự kết hợp giữa Lao động dũng mãnh và Hòa nhập Đại ngã:
+          </p>
+          <div class="space-y-3">
+            <div class="bg-slate-900/80 border border-slate-800 p-4 rounded-xl">
+              <span class="text-amber-400 font-bold block text-sm font-mono mb-1">🌅 1. BUỔI SÁNG: Thiết Lập Trạng Thái Chiến Binh & Đại Ngã (15 Phút)</span>
+              <p class="text-xs sm:text-sm text-slate-300">
+                &bull; <b>0-5 Phút:</b> Tuyệt đối không chạm vào smartphone! Nằm yên thở sâu 5 hơi, cảm nhận sự sống trong huyết quản: <i>"Tôi là hiện thân của Brahman bước ra thế giới để sáng tạo"</i>.<br>
+                &bull; <b>5-15 Phút:</b> Rửa mặt nước lạnh. Dự phòng Khắc kỷ (*Praemeditatio Malorum*): Tiên liệu trước những kẻ gian dối, sự cố kẹt xe sẽ gặp trong ngày để tâm không bao giờ bị bất ngờ hay phẫn nộ.
+              </p>
+            </div>
+
+            <div class="bg-slate-900/80 border border-slate-800 p-4 rounded-xl">
+              <span class="text-sky-400 font-bold block text-sm font-mono mb-1">⚡ 2. BAN NGÀY: Lao Động Như Đấu Sĩ & Vận Hành Vô Vi (8 - 10 Tiếng)</span>
+              <p class="text-xs sm:text-sm text-slate-300">
+                &bull; <b>Khối thời gian sắt đá (Deep Work):</b> Chia ca làm việc 90 phút, dồn 100% sinh lực như đấu sĩ trên võ đài, loại bỏ mọi thông báo rác.<br>
+                &bull; <b>Quy tắc 3 giây:</b> Khi sự cố xảy ra (bị khiển trách, mất khách), dừng lại 3 giây. Tự hỏi: Thuộc Nhóm A hay Nhóm B? Nếu là Nhóm B &rarr; Thở ra, mỉm cười (*Amor Fati*), chuyển ngay sang hành động thuộc Nhóm A để xử lý hiện trường.
+              </p>
+            </div>
+
+            <div class="bg-slate-900/80 border border-slate-800 p-4 rounded-xl">
+              <span class="text-indigo-400 font-bold block text-sm font-mono mb-1">🌙 3. BUỔI TỐI: Rửa Sạch Bụi Trần & Trở Về Tĩnh Lặng (30 Phút)</span>
+              <p class="text-xs sm:text-sm text-slate-300">
+                &bull; <b>Giờ tan tầm:</b> Tháo bộ áo giáp chiến binh xuống. Lắng nghe tiếng gió, ngắm dòng người trôi chảy bằng con mắt bao dung.<br>
+                &bull; <b>Kiểm điểm Socrates trước khi ngủ:</b> Tự hỏi 3 câu trong sổ tay: (1) Hôm nay ta đã nỗ lực hết mình chưa? (2) Có để cái tôi ích kỷ nổi lên làm chủ không? (3) Nếu mai là ngày cuối cùng được sống, ta có hối tiếc cách ta sống hôm nay không? Khép sổ lại, giao phó thân tâm vào giấc ngủ sâu để tiểu ngã tan biến an lành trong Đại ngã Brahman.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMPARISON TABLE -->
+      <section id="comparison" class="space-y-4 pt-6 border-t border-slate-800">
+        <div class="text-xs font-bold text-sky-400 uppercase tracking-widest font-mono">Bảng Đối Chiếu</div>
+        <h2 class="text-2xl sm:text-3xl font-black text-white font-serif tracking-tight">
+          Ba Lối Sống Trước Sóng Gió Cuộc Đời
+        </h2>
+        <div class="overflow-x-auto my-4">
+          <table class="w-full text-left text-xs sm:text-sm border border-slate-800 rounded-xl overflow-hidden">
+            <thead class="bg-slate-900 text-slate-300 uppercase font-mono text-[11px]">
+              <tr>
+                <th class="p-3 border-b border-slate-800">Tình Huống</th>
+                <th class="p-3 border-b border-slate-800 text-rose-400">Kẻ Nô Lệ Xã Hội (Ego)</th>
+                <th class="p-3 border-b border-slate-800 text-amber-400">Kẻ Trốn Đời (Nằm Yên)</th>
+                <th class="p-3 border-b border-slate-800 text-sky-400">TRIẾT GIA ĐƯỜNG PHỐ</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-800 text-slate-300">
+              <tr>
+                <td class="p-3 font-semibold text-white">Công việc nặng nhọc</td>
+                <td class="p-3">Than vãn, làm đối phó, chờ giờ đi nhậu xả stress.</td>
+                <td class="p-3">Trốn tránh, bỏ việc, ngụy biện "không màng danh lợi".</td>
+                <td class="p-3 bg-sky-950/20 text-sky-200"><b>Lao động 100% sinh lực; coi công việc là võ đài rèn tâm và phụng sự.</b></td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-white">Bị lừa hoặc mất tiền</td>
+                <td class="p-3">Cay đắng, căm thù, mất ngủ, tìm cách trả thù.</td>
+                <td class="p-3">An ủi gượng gạo "chắc do nghiệp", giả vờ an nhiên.</td>
+                <td class="p-3 bg-sky-950/20 text-sky-200"><b>Bình thản đón nhận (Nhóm B); rút bài học; lập kế hoạch tác chiến mới ngay (Nhóm A).</b></td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-white">Thăng chức, phát tài</td>
+                <td class="p-3">Kiêu ngạo, mua đồ khoe mẽ, sợ người khác cướp mất.</td>
+                <td class="p-3">Khinh tiền giả tạo, phán xét người kiếm tiền là "chưa ngộ".</td>
+                <td class="p-3 bg-sky-950/20 text-sky-200"><b>Vui mừng vừa phải; tiền là công cụ; tâm vẫn đứng vững ở vị thế Atman bất biến.</b></td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-white">Đối diện cái chết</td>
+                <td class="p-3">Sợ hãi tột cùng, né tránh nói tới, bám víu của cải.</td>
+                <td class="p-3">Coi thường thể xác, mong chết sớm để "thoát nợ đời".</td>
+                <td class="p-3 bg-sky-950/20 text-sky-200"><b>Ý thức cái chết có thể đến bất kỳ lúc nào; do đó sống và yêu thương rực rỡ từng phút!</b></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- EPILOGUE -->
+      <section id="epilogue" class="space-y-4 pt-6 border-t border-slate-800">
+        <div class="text-xs font-bold text-sky-400 uppercase tracking-widest font-mono">Lời Kết</div>
+        <h2 class="text-2xl sm:text-3xl font-black text-white font-serif tracking-tight">
+          Đứng Thẳng Giữa Trần Gian – Lao Động Như Thượng Đế, An Nhiên Như Đất Mẹ
+        </h2>
+        <div class="space-y-4 leading-relaxed">
+          <p>
+            Hỡi những con người đang ngày ngày vật lộn mưu sinh trên mặt đường!
+          </p>
+          <p>
+            Đừng bao giờ để bất kỳ ai lừa dối bạn rằng: Muốn sống tâm linh cao thượng thì phải từ bỏ công việc, phải sống nghèo khổ, hay phải trốn chạy xã hội vào những nơi thâm sơn cùng cốc. Đó là triết lý của những kẻ chiến bại!
+          </p>
+          <p class="font-semibold text-white text-lg">
+            Trần gian này không phải là một nhà tù cần trốn chạy; trần gian này là một thao trường vĩ đại (Kurukshetra) để bạn rèn luyện linh hồn.
+          </p>
+          <p>
+            Mỗi đồng tiền chân chính bạn kiếm được bằng mồ hôi và trí tuệ; mỗi sản phẩm chất lượng bạn tạo ra cho xã hội; mỗi lần bạn bị đời đánh ngã dập mặt mà vẫn nghiến răng mỉm cười đứng dậy bước tiếp... đó chính là những thời khắc thiêng liêng nhất của một con người.
+          </p>
+          <p>
+            Hãy sống như một <b>Triết gia Đường phố đích thực</b>:
+          </p>
+          <ul class="list-disc list-outside pl-5 space-y-2 text-slate-300">
+            <li>Ra trận mỗi ngày với ý chí của một <b>Đấu sĩ La Mã</b>: Làm việc quyết liệt, kỷ luật sắt đá, tư duy sắc bén, không sợ hãi bất kỳ áp lực nào của cuộc đời.</li>
+            <li>Nhưng đồng thời, giữ sâu thẳm trong lồng ngực sự bình an tuyệt đối của một <b>Bậc Giác Ngộ</b>: Nhận biết rõ ràng bạn là ai, không dính mắc vào được - mất - bại - thành, thấu suốt rằng bản chất chân thật của bạn (Atman) chưa từng một giây phút nào tách rời khỏi nguồn cội vĩ đại của vũ trụ (Brahman).</li>
+          </ul>
+          <blockquote class="border-l-4 border-amber-500 bg-amber-950/20 p-5 rounded-r-2xl text-amber-200 text-lg sm:text-xl font-serif italic my-6">
+            "Bạn không cần phải tìm kiếm Thiên đường hay Niết bàn ở một thế giới xa xăm nào sau khi chết.<br><br>
+            Ngay khoảnh khắc này, khi bạn đứng thẳng lưng giữa đường phố, hít một hơi thở sâu của đất trời, mỉm cười trước nghịch cảnh và tiếp tục bước tới lao động hết mình bằng tình yêu thương và sự tự do không gì lay chuyển nổi...<br><br>
+            <b>NGAY TẠI ĐÓ, BẠN CHÍNH LÀ ĐẠI NGÃ. NGAY TẠI ĐÓ, ĐƯỜNG PHỐ ĐÃ HÓA THÀNH NIẾT BÀN.</b>"
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- Footer Sign-off -->
+      <footer class="pt-8 border-t border-slate-800 text-center text-xs text-slate-400 font-mono space-y-2 no-print">
+        <div>🏛️ VIỆN NGHIÊN CỨU TƯ TƯỞNG &bull; TRIẾT HỌC ĐƯỜNG PHỐ THỰC CHIẾN</div>
+        <div>Lưu trữ vĩnh viễn: <code class="text-sky-400">D:\Sach\Triet hoc\triet-hoc-duong-pho.html</code></div>
+      </footer>
+
+    </article>
+  </div>
+
+  <script>
+    // READING PROGRESS BAR
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('progressBar').style.width = scrolled + '%';
+    });
+
+    // FONT SIZE CONTROLLER
+    let currentFontSize = 18;
+    function changeFontSize(delta) {
+      currentFontSize = Math.min(24, Math.max(14, currentFontSize + delta * 2));
+      const el = document.getElementById('articleContent');
+      el.style.fontSize = currentFontSize + 'px';
+    }
+
+    // SCROLLSPY FOR TABLE OF CONTENTS
+    const sections = document.querySelectorAll('article section');
+    const navLinks = document.querySelectorAll('.toc-link');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

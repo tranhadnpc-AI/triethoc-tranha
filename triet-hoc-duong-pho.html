@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Triết Học Đường Phố: Nhát Búa Đập Tan Ảo Tưởng "Thanh Cao" Phương Đông & Biện Chứng Ý Chí Sinh Tồn</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    /* Editorial Layout Styling */
+    ::-webkit-scrollbar { width: 7px; height: 7px; }
+    ::-webkit-scrollbar-track { background: #060911; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #64748b; }
+
+    .drop-cap::first-letter {
+      float: left;
+      font-size: 3.8rem;
+      line-height: 0.8;
+      font-weight: 900;
+      padding-right: 0.6rem;
+      padding-top: 0.15rem;
+      color: #ef4444;
+      font-family: Georgia, serif;
+    }
+
+    .toc-link.active {
+      color: #ef4444;
+      font-weight: 700;
+      border-left-color: #ef4444;
+    }
+
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white !important; color: black !important; font-size: 11pt; }
+    }
+  </style>
+</head>
+<body class="bg-[#060911] text-[#e2e8f0] antialiased min-h-screen font-sans selection:bg-rose-600 selection:text-white">
+
+  <!-- Top Reading Progress Bar -->
+  <div class="fixed top-0 left-0 w-full h-1 bg-slate-900 z-50 no-print">
+    <div id="progressBar" class="h-full bg-gradient-to-r from-rose-600 via-amber-500 to-sky-500 w-0 transition-all duration-150"></div>
+  </div>
+
+  <!-- Header Navigation Bar -->
+  <nav class="sticky top-0 z-40 bg-[#060911]/90 backdrop-blur-md border-b border-slate-800/80 px-4 py-3 no-print">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-white transition-colors bg-slate-900 border border-slate-800 px-2.5 py-1.5 rounded-lg">
+          <span>&larr;</span> Trở lại Dashboard
+        </a>
+        <span class="text-xs text-slate-500 hidden sm:inline">|</span>
+        <span class="text-xs font-semibold text-rose-400 hidden sm:inline">Nhát Búa Của Nietzsche & Duy Vật Lịch Sử</span>
+      </div>
+
+      <!-- Action buttons -->
+      <div class="flex items-center gap-2">
+        <button onclick="changeFontSize(-1)" title="Giảm cỡ chữ" class="p-1.5 text-xs text-slate-400 hover:text-white bg-slate-900 border border-slate-800 rounded-md">A-</button>
+        <button onclick="changeFontSize(1)" title="Tăng cỡ chữ" class="p-1.5 text-xs text-slate-400 hover:text-white bg-slate-900 border border-slate-800 rounded-md">A+</button>
+        <button onclick="window.print()" title="In hoặc lưu PDF" class="inline-flex items-center gap-1 text-xs text-rose-400 hover:text-rose-300 bg-rose-950/40 border border-rose-800/50 px-2.5 py-1.5 rounded-md font-medium">
+          <span>🖨️</span> In / PDF
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Header Section -->
+  <header class="max-w-4xl mx-auto px-5 pt-12 pb-10 text-center border-b border-slate-800/80">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-950/60 border border-rose-800/60 text-xs text-rose-400 mb-4 font-mono uppercase tracking-wider">
+      <span>🔨 Bản Tuyên Ngôn Đập Tan Đạo Đức Nô Lệ & Ảo Tưởng Thanh Cao</span>
+    </div>
+    <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight mb-4 font-serif">
+      TRIẾT HỌC ĐƯỜNG PHỐ
+    </h1>
+    <h2 class="text-lg sm:text-2xl font-bold text-rose-400 tracking-wide mb-6">
+      Nhát Búa Đập Tan Ảo Tưởng "Thanh Cao" Phương Đông & Biện Chứng Của Ý Chí Sinh Tồn
+    </h2>
+    <p class="text-sm sm:text-base text-slate-400 max-w-2xl mx-auto leading-relaxed italic">
+      Vũ khí lý luận: Búa đập thần tượng của Friedrich Nietzsche, Duy vật lịch sử của Karl Marx, Định luật Entropy và Sinh học tiến hóa: Xóa bỏ sự ngụy biện "vô thường, buông bỏ" của những kẻ bất lực!
+    </p>
+
+    <!-- Meta details -->
+    <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-8 mt-8 text-xs text-slate-400 pt-6 border-t border-slate-800/50 font-mono">
+      <div><span class="text-slate-500">PHƯƠNG PHÁP:</span> Phả hệ học Nietzsche & Duy vật thực tiễn</div>
+      <div><span class="text-slate-500">MỤC TIÊU:</span> Thanh trừng sự bất lực giả danh đạo đức</div>
+      <div><span class="text-slate-500">BẢN CHẤT:</span> Ý chí sinh tồn mãnh liệt (Will to Live)</div>
+    </div>
+  </header>
+
+  <!-- Main Article Layout with Sticky Sidebar -->
+  <div class="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+    <!-- Sticky Table of Contents (Desktop - 4 Cols) -->
+    <aside class="hidden lg:block lg:col-span-4 no-print">
+      <div class="sticky top-16 bg-[#0c101c] border border-slate-800 rounded-2xl p-5 space-y-4 max-h-[85vh] overflow-y-auto">
+        <h3 class="text-xs font-bold text-rose-400 uppercase tracking-wider flex items-center gap-2">
+          <span>📜</span> Cấu Trúc Luận Điểm
+        </h3>
+        <nav class="space-y-1 text-xs border-l border-slate-800 pl-3 font-medium text-slate-400">
+          <a href="#prologue" class="toc-link block py-1.5 hover:text-white transition-colors border-l-2 border-transparent -ml-[13px] pl-2.5">Mở Đầu: Lật Tẩy Tự Luyến Tâm Linh</a>
+          <a href="#chapter-1" class="toc-link block py-1.5 hover:text-white transition-colors border-l-2 border-transparent -ml-[13px] pl-2.5">Chương 1: Đập Tan Huyền Thoại Vô Thường</a>
+          <a href="#chapter-2" class="toc-link block py-1.5 hover:text-white transition-colors border-l-2 border-transparent -ml-[13px] pl-2.5">Chương 2: Ai Đang Nuôi Kẻ Nói "Buông Bỏ"?</a>
+          <a href="#chapter-3" class="toc-link block py-1.5 hover:text-white transition-colors border-l-2 border-transparent -ml-[13px] pl-2.5">Chương 3: Đập Vỡ "Ảo Tưởng Thanh Cao"</a>
+          <a href="#chapter-4" class="toc-link block py-1.5 hover:text-white transition-colors border-l-2 border-transparent -ml-[13px] pl-2.5">Chương 4: Tái Thiết Lập Brahman: Ngọn Lửa Sống</a>
+          <a href="#chapter-5" class="toc-link block py-1.5 hover:text-white transition-colors border-l-2 border-transparent -ml-[13px] pl-2.5">Chương 5: 5 Nguyên Tắc Sắt Đá Của Chiến Binh</a>
+          <a href="#epilogue" class="toc-link block py-1.5 hover:text-white transition-colors border-l-2 border-transparent -ml-[13px] pl-2.5">Lời Kết: Đập Bỏ Tòa Sen Giả Hiệu!</a>
+        </nav>
+
+        <!-- Mini Quote Card -->
+        <div class="pt-4 border-t border-slate-800 text-[11px] text-slate-400 italic leading-relaxed">
+          "Kẻ yếu không thể tạo ra của cải bèn tôn vinh sự nghèo hèn của mình thành 'thanh tịnh' và phán xét kẻ nỗ lực là 'tham sân si'. Đó là đạo đức nô lệ!" — Friedrich Nietzsche
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Essay Content (8 Cols) -->
+    <article id="articleContent" class="lg:col-span-8 space-y-12 text-slate-300 leading-relaxed text-base sm:text-lg">
+
+      <!-- PROLOGUE -->
+      <section id="prologue" class="space-y-4">
+        <div class="text-xs font-bold text-rose-400 uppercase tracking-widest font-mono">Lời Mở Đầu</div>
+        <h2 class="text-2xl sm:text-3xl font-black text-white font-serif tracking-tight">
+          Lật Tẩy Căn Bệnh "Tự Luyến Tinh Thần" Của Phương Đông Thoái Hóa
+        </h2>
+        <div class="space-y-4 leading-relaxed">
+          <p class="drop-cap">
+            Đã đến lúc phải nói thẳng vào mặt sự thật mà hàng triệu người đang tôn sùng nhưng không dám nhìn nhận: Phương Đông cổ đại từng sinh ra những tia chớp trí tuệ rực rỡ, nhưng qua hàng ngàn năm phong kiến và suy đồi, nó đã bị biến chất thành một <b>thứ thuốc phiện tinh thần ru ngủ độc hại</b>.
+          </p>
+          <p>
+            Hãy nhìn vào cách mà đám đông ngày nay sử dụng những từ ngữ như <i>"Vô thường"</i>, <i>"Buông bỏ"</i>, <i>"Tùy duyên"</i>, <i>"Không màng danh lợi"</i>:
+          </p>
+          <div class="space-y-3 my-4">
+            <div class="bg-slate-900/80 border-l-4 border-rose-500 p-4 rounded-r-xl text-sm">
+              <b class="text-rose-300">1. Kẻ lười biếng, sợ cạnh tranh, không chịu học tập:</b> Khi bị xã hội đào thải, anh ta thở dài: <i>"Ôi dào, đời là vô thường, bon chen làm gì, nhà lầu xe hơi chết có mang theo được đâu!"</i>.
+            </div>
+            <div class="bg-slate-900/80 border-l-4 border-rose-500 p-4 rounded-r-xl text-sm">
+              <b class="text-rose-300">2. Kẻ bất tài, không nuôi nổi vợ con, cha mẹ ốm đau không có tiền chữa:</b> Trốn vào phòng thiền, ăn chay niệm Phật, tự huyễn hoặc mình là người <i>"thanh cao, sống giản dị, thoát tục"</i>.
+            </div>
+            <div class="bg-slate-900/80 border-l-4 border-rose-500 p-4 rounded-r-xl text-sm">
+              <b class="text-rose-300">3. Kẻ thất bại vì dốt nát và quản trị kém:</b> Thay vì mổ xẻ lỗi sai trong sổ sách kinh doanh, anh ta tự an ủi: <i>"Chắc do mình không có số làm giàu, thôi buông bỏ cho nhẹ lòng, vạn sự tùy duyên"</i>.
+            </div>
+          </div>
+          <blockquote class="border-l-4 border-rose-600 bg-rose-950/20 p-5 rounded-r-2xl text-rose-200 text-lg sm:text-xl font-serif font-bold italic my-6">
+            "ĐÓ KHÔNG PHẢI LÀ GIÁC NGỘ! ĐÓ LÀ SỰ HÈN NHÁT TRẦN TRỤI!<br>
+            ĐÓ LÀ SỰ ĐẦU HÀNG TRƯỚC CUỘC ĐỜI ĐƯỢC KHOÁC LÊN CHIẾC ÁO CỦA ĐẠO ĐỨC GIẢ!"
+          </blockquote>
+          <p>
+            Triết gia Friedrich Nietzsche trong tác phẩm <i>Bàn về Phả hệ Đạo đức (On the Genealogy of Morals)</i> đã dùng con dao mổ sắc lạnh nhất để phanh phui bản chất tâm lý học của thứ "thanh cao" này: <b>Ressentiment (Sự căm thù ghen tị ngấm ngầm của kẻ bất lực)</b>. Kẻ yếu không thể tạo ra của cải, không có can đảm chiến đấu trên đấu trường sinh tồn, bèn bịa ra một hệ giá trị đảo ngược:
+          </p>
+          <ul class="list-disc list-outside pl-5 space-y-1.5 text-sm sm:text-base text-slate-300">
+            <li>Tuyên bố sự bất lực của mình là <i>"Khiêm nhường"</i>.</li>
+            <li>Tuyên bố sự nghèo hèn của mình là <i>"Thanh tịnh"</i>.</li>
+            <li>Tuyên bố sự sợ hãi cạnh tranh của mình là <i>"Buông bỏ"</i>.</li>
+            <li>Và trơ trẽn nhất: Phán xét những người đang cày cuốc ngày đêm, xây dựng nhà máy, tạo công ăn việc làm, tích lũy tài chính cho gia đình là <i>"Chìm đắm trong tham sân si hạ đẳng"</i>!</li>
+          </ul>
+          <p class="font-semibold text-rose-400">
+            Đây chính là Đạo đức Nô lệ (Slave Morality) - thứ virus tâm lý biến một con người thành phế nhân ăn bám, tự hào về sự tàn tật của chính mình!
+          </p>
+        </div>
+      </section>
+
+      <!-- CHAPTER 1 -->
+      <section id="chapter-1" class="space-y-4 pt-6 border-t border-slate-800">
+        <div class="text-xs font-bold text-rose-400 uppercase tracking-widest font-mono">Chương 1</div>
+        <h2 class="text-2xl sm:text-3xl font-black text-white font-serif tracking-tight">
+          Đập Tan Huyền Thoại "Vô Thường" Bằng Nhiệt Động Lực Học Và Tiến Hóa
+        </h2>
+        <div class="space-y-4 leading-relaxed">
+          <p>
+            Kẻ u mê hiểu "Vô thường" là: Mọi thứ rồi sẽ mất đi, nên không cần làm gì cả.  
+            Nhà khoa học và triết gia đường phố hiểu Vô thường bằng <b>Định Luật Hai Nhiệt Động Lực Học (Entropy)</b>:
+          </p>
+          <div class="bg-slate-900 border border-slate-800 p-5 rounded-2xl space-y-2 text-sm sm:text-base">
+            <p>&bull; Vũ trụ tự nhiên luôn có xu hướng tiến từ trật tự về hỗn loạn (<b>Entropy luôn tăng</b>). Một ngôi nhà bỏ hoang sẽ tự sụp đổ; cỗ xe không bảo trì sẽ tự gỉ sét; một cơ thể không ăn uống sẽ chết đói và thối rữa; một doanh nghiệp không cải tiến sẽ phá sản.</p>
+            <p>&bull; <b>SỰ SỐNG (LIFE) VỀ BẢN CHẤT LÀ MỘT TIẾN TRÌNH KHÁNG LẠI ENTROPY (ANTI-ENTROPY)!</b></p>
+            <p>&bull; Để duy trì sự sống của bạn, của con bạn, của giống nòi bạn, bạn <b>BẮT BUỘC PHẢI LIÊN TỤC TIÊU TỐN NĂNG LƯỢNG VÀ LAO ĐỘNG</b>. Bạn phải cày cuốc, phải xây dựng, phải chiến đấu để duy trì trật tự chống lại sự phân hủy của tự nhiên.</p>
+          </div>
+          <p>
+            Nếu tổ tiên loài người cách đây 100.000 năm ngồi trong hang đá tụng niệm <i>"Mọi thứ là vô thường, thú dữ cắn chết ta thì cũng là vô thường, mùa đông lạnh giá cũng là vô thường nên ta buông bỏ không đi săn, không may áo da thú"</i>, thì giống loài người đã <b>tuyệt chủng ngay trong kỷ băng hà</b>!
+          </p>
+          <p>
+            Chính <b>Ý Chí Sinh Tồn Mãnh Liệt</b>, sự bám đuổi quyết liệt thức ăn, lửa và sự an toàn đã đưa loài người đứng lên đỉnh chuỗi thức ăn, sáng tạo ra y học để cứu con bạn khi bị sốt, xây dựng nhà máy điện để bạn có ánh sáng đọc sách hôm nay. Phủ nhận sự tích lũy vật chất nhân danh "Vô thường" là một sự phản bội trơ trẽn đối với toàn bộ lịch sử tiến hóa của giống loài!
+          </p>
+        </div>
+      </section>
+
+      <!-- CHAPTER 2 -->
+      <section id="chapter-2" class="space-y-4 pt-6 border-t border-slate-800">
+        <div class="text-xs font-bold text-rose-400 uppercase tracking-widest font-mono">Chương 2</div>
+        <h2 class="text-2xl sm:text-3xl font-black text-white font-serif tracking-tight">
+          Phẫu Thuật "Buông Bỏ": Ai Đang Nuôi Kẻ Nói "Buông Bỏ"?
+        </h2>
+        <div class="space-y-4 leading-relaxed">
+          <p>
+            Hãy đặt câu hỏi tàn nhẫn nhất mà những kẻ rao giảng "buông bỏ" không bao giờ dám trả lời:
+          </p>
+          <blockquote class="border-l-4 border-amber-500 bg-slate-900/70 p-4 rounded-r-xl text-amber-300 font-bold text-base sm:text-lg">
+            AI ĐANG NUÔI SỐNG NHỮNG KẺ NGỒI GIẢNG ĐẠO "BUÔNG BỎ"?
+          </blockquote>
+          <p>
+            Karl Marx đã vạch trần quy luật cơ bản của đời sống xã hội trong Chủ nghĩa duy vật lịch sử:
+          </p>
+          <ul class="list-disc list-outside pl-5 space-y-2 text-sm sm:text-base text-slate-300">
+            <li>Trước khi con người có thể làm thơ, suy tư triết học hay ngồi thiền, họ <b>BẮT BUỘC PHẢI CÓ CƠM ĂN, NƯỚC UỐNG, QUẦN ÁO MẶC VÀ NHÀ ĐỂ Ở</b>.</li>
+            <li>Để có bát cơm cho vị thiền sư ngồi đàm đạo "buông bỏ", người nông dân phải còng lưng cày ruộng dưới trời nắng cháy da, chân lội bùn sâu (Lao động cực nhọc).</li>
+            <li>Để có ngôi chùa thanh tịnh bằng gỗ lim hay bê tông cốt thép, hàng trăm người thợ xây, thợ mộc phải đổ mồ hôi, chịu nguy hiểm tính mạng trên giàn giáo.</li>
+            <li>Để bạn có thể ngồi quán cà phê điều hòa máy lạnh gõ bàn phím triết lý "tiền tài là phù du", người cha, người mẹ của bạn đã phải bán mạng làm việc cả đời, hoặc xã hội phải duy trì hệ thống điện, mạng viễn thông bằng hàng triệu giờ lao động cật lực của các công nhân kỹ thuật.</li>
+          </ul>
+          <div class="bg-rose-950/20 border border-rose-900/50 p-4 rounded-xl text-sm font-semibold text-rose-300">
+            Một kẻ tự xưng là "buông bỏ tiền tài" trong khi vẫn xài tiền của cha mẹ, vẫn ăn cơm của người lao động làm ra, vẫn dùng thuốc men của nền y học hiện đại sản xuất: Đó là một KÝ SINH TRÙNG ĐẠO ĐỨC!
+          </div>
+          <p>
+            Bạn chỉ có quyền nói từ "Buông bỏ" khi:
+          </p>
+          <ol class="list-decimal list-outside pl-5 space-y-1.5 text-sm sm:text-base font-medium text-slate-200">
+            <li>Bạn đã <b>tự tay làm ra của cải</b>, tự nuôi sống bản thân và gia đình mình một cách đàng hoàng mà không phải ngửa tay xin ai một đồng.</li>
+            <li>Bạn đã <b>đứng trên đỉnh cao của năng lực</b>, bạn có khả năng kiếm tiền nhưng bạn chọn một lối sống giản dị có chủ đích, chứ không phải vì bạn bất tài không kiếm nổi tiền rồi gọi đó là "buông bỏ"!</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- CHAPTER 3 -->
+      <section id="chapter-3" class="space-y-4 pt-6 border-t border-slate-800">
+        <div class="text-xs font-bold text-rose-400 uppercase tracking-widest font-mono">Chương 3</div>
+        <h2 class="text-2xl sm:text-3xl font-black text-white font-serif tracking-tight">
+          Đập Vỡ "Ảo Tưởng Thanh Cao": Tiền Bạc & Lòng Từ Bi Thực Tế
+        </h2>
+        <div class="space-y-4 leading-relaxed">
+          <p>
+            Cái bẫy độc hại nhất của tinh thần phương Đông thoái hóa là tin rằng thế giới vật chất, tiền bạc, thân xác là "dơ bẩn, hạ đẳng", còn thế giới tinh thần, suy tưởng, thanh tịnh mới là "cao quý, thuần khiết". Đây là một sự nhảm nhí phản tự nhiên!
+          </p>
+          <div class="bg-slate-900/80 border border-slate-800 p-5 rounded-2xl space-y-3">
+            <h4 class="font-bold text-sky-400 text-base">Tiền Bạc Thực Sự Là Gì Dưới Con Mắt Triết Gia?</h4>
+            <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
+              &bull; Tiền bạc không phải là tờ giấy hay con số tài khoản. <b>Tiền bạc là Năng Lượng Tinh Khiết Của Thời Gian Và Sức Lao Động Được Cô Đọng Lại.</b><br>
+              &bull; Khi bạn cầm trên tay 10 triệu đồng do chính bạn kiếm được bằng mồ hôi và chất xám chân chính: Số tiền đó chính là 100 giờ cuộc đời của bạn đã được chuyển hóa thành dạng năng lượng có thể lưu trữ.<br>
+              &bull; Bạn dùng số tiền đó để mua sữa cho con, mua thuốc cứu sống cha mẹ, bảo vệ gia đình trước giông bão kinh tế. <b>ĐIỀU ĐÓ CÓ GÌ LÀ DƠ BẨN? ĐIỀU ĐÓ CAO QUÝ GẤP VẠN LẦN NHỮNG LỜI NÓI SUÔNG VỀ "THANH TỊNH"!</b>
+            </p>
+          </div>
+          <p>
+            <b>Sự tàn nhẫn của đời sống thực tế:</b> Bệnh viện thông báo: Người thân yêu nhất của bạn mắc bạo bệnh, cần 500 triệu đồng ngay trong đêm nay để phẫu thuật giành giật sự sống.
+          </p>
+          <p class="text-sm sm:text-base text-rose-300 font-semibold italic">
+            Lúc đó, người "thanh cao" làm được gì? Đứng chắp tay cầu nguyện? Đọc kinh về "vô thường"? Khuyên người thân hãy "buông bỏ thân xác"? Sự bất lực đó chính là tội ác! Trong khi đó, người chiến binh đường phố - kẻ từng bị chê là "thực dụng, cày cuốc kiếm tiền" - bước tới quẹt thẻ thanh toán 500 triệu trong 3 giây, cứu sống mạng người!
+          </p>
+          <blockquote class="border-l-4 border-rose-500 bg-slate-900/60 p-4 rounded-r-xl italic text-rose-200 text-base my-2 font-bold">
+            "Từ bi mà không có Năng Lực Vật Chất chỉ là một thứ từ bi bất lực và tàn nhẫn!"
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- CHAPTER 4 -->
+      <section id="chapter-4" class="space-y-4 pt-6 border-t border-slate-800">
+        <div class="text-xs font-bold text-rose-400 uppercase tracking-widest font-mono">Chương 4</div>
+        <h2 class="text-2xl sm:text-3xl font-black text-white font-serif tracking-tight">
+          Tái Thiết Lập Brahman: Ngọn Lửa Sáng Tạo Sống Động, Không Phải Nấm Mồ Tĩnh Lặng
+        </h2>
+        <div class="space-y-4 leading-relaxed">
+          <p>
+            Hàng thế kỷ qua, người ta vẽ ra Brahman như một cõi hư vô tĩnh mịch, một trạng thái bất động vĩnh hằng như một cái xác chết ướp lạnh. Điều này hoàn toàn sai lệch!
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4">
+            <div class="bg-slate-950 p-4 rounded-xl border border-slate-800">
+              <span class="text-slate-500 font-bold block mb-1">BRAHMAN GIẢ HIỆU CỦA KẺ YẾM THẾ:</span>
+              Cõi hư vô • Tĩnh lặng chết chóc • Chối bỏ thân xác • Trốn tránh trần gian • Nằm yên chờ chết.
+            </div>
+            <div class="bg-rose-950/30 p-4 rounded-xl border border-rose-800/40">
+              <span class="text-rose-400 font-bold block mb-1">BRAHMAN CHÂN THẬT CỦA VŨ TRỤ:</span>
+              Ý CHÍ BÙNG NỔ • SỰ TIẾN HÓA KHÔNG NGỪNG • Hàng tỷ thiên hà giãn nở • Các ngôi sao nổ tung • Cây cối đâm toạc đất đón nắng!
+            </div>
+          </div>
+          <p>
+            Bạn <b>KHÔNG THỂ</b> hòa nhập với Brahman bằng cách biến mình thành một kẻ bại liệt tinh thần, nằm ườn ra ghế và tụng niệm "tùy duyên". Bạn hòa nhập với Brahman khi bạn <b>HÒA VÀO DÒNG CHẢY SÁNG TẠO VÀ LAO ĐỘNG HÙNG MẠNH NHẤT CỦA VŨ TRỤ</b>:
+          </p>
+          <ul class="list-disc list-outside pl-5 space-y-1.5 text-sm sm:text-base text-slate-300">
+            <li>Thức dậy sớm, rèn luyện thể lực cho cơ thể săn chắc &rarr; Tôn vinh Brahman qua đền thờ thân xác.</li>
+            <li>Dồn toàn bộ trí tuệ giải bài toán khó, viết dòng code xuất sắc, thiết kế công trình &rarr; Để trí tuệ Brahman sáng tạo qua bộ não bạn.</li>
+            <li>Lao vào thương trường, đàm phán quyết liệt, kiếm tiền chân chính để bảo vệ gia đình và tạo việc làm cho người khác &rarr; Thực thi Ý Chí Sinh Tồn của Brahman trên mặt đất!</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CHAPTER 5 -->
+      <section id="chapter-5" class="space-y-4 pt-6 border-t border-slate-800">
+        <div class="text-xs font-bold text-rose-400 uppercase tracking-widest font-mono">Chương 5</div>
+        <h2 class="text-2xl sm:text-3xl font-black text-white font-serif tracking-tight">
+          Hệ 5 Nguyên Tắc Sắt Đá Của Một Chiến Binh Đường Phố
+        </h2>
+        <div class="space-y-3 my-4">
+          <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl">
+            <span class="text-rose-400 font-bold font-mono text-sm block mb-1">1. CẤM TUYỆT ĐỐI SỰ TỰ HÀO VỀ NGHÈO HÈN</span>
+            <p class="text-xs sm:text-sm text-slate-300">Nghèo đói vì lười biếng không phải là đức hạnh; đó là sự thất bại sinh học cần sửa chữa ngay lập tức. Năng lực kiếm tiền chân chính là chỉ số đo lường sức khỏe tư duy và năng lực thích nghi với thực tại.</p>
+          </div>
+          <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl">
+            <span class="text-amber-400 font-bold font-mono text-sm block mb-1">2. VÔ THƯỜNG LÀ HIỆU TRIỆU XUNG TRẬN (MEMENTO MORI)</span>
+            <p class="text-xs sm:text-sm text-slate-300">Vì thời gian là hữu hạn và cái chết tất yếu, ta không có thời gian để nằm ườn lướt mạng, tự thương hại bản thân. Hãy lao vào công việc với cường độ cao nhất, tạo ra thành tựu thực sự trước khi nhắm mắt xuôi tay!</p>
+          </div>
+          <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl">
+            <span class="text-sky-400 font-bold font-mono text-sm block mb-1">3. BUÔNG BỎ ĐÚNG NGHĨA LÀ SÁT THẦN TRONG TÂM</span>
+            <p class="text-xs sm:text-sm text-slate-300">Buông bỏ sự tự ái vặt vãnh, buông bỏ nỗi sợ mất mặt khi bị từ chối; nhưng TUYỆT ĐỐI KHÔNG BUÔNG BỎ kỷ luật làm việc, mục tiêu tài chính và trách nhiệm với những người dựa vào bạn.</p>
+          </div>
+          <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl">
+            <span class="text-emerald-400 font-bold font-mono text-sm block mb-1">4. SỐNG NHƯ CÂY CỔ THỤ GIỮA ĐÔ THỊ</span>
+            <p class="text-xs sm:text-sm text-slate-300">Rễ cắm sâu vào lòng đất đen đầy giun dế và phân bón (đối diện với cơm áo gạo tiền, kiếm tiền mưu sinh gai góc); tán lá vươn cao đón gió trời quang hợp (tâm trí khoáng đạt, tự do). Không có đất đen thì rễ cây chết khô!</p>
+          </div>
+          <div class="bg-slate-900 border border-slate-800 p-4 rounded-xl">
+            <span class="text-purple-400 font-bold font-mono text-sm block mb-1">5. ĐỒNG HÀNH CÙNG QUY LUẬT XÁC SUẤT TOÁN HỌC</span>
+            <p class="text-xs sm:text-sm text-slate-300">Không đặt số phận vào một vụ việc đơn lẻ; hiểu quy luật số lớn; khóa chặt đáy sinh tồn bằng quỹ dự phòng và tấn công đột phá không sợ hãi.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- EPILOGUE -->
+      <section id="epilogue" class="space-y-4 pt-6 border-t border-slate-800">
+        <div class="text-xs font-bold text-rose-400 uppercase tracking-widest font-mono">Lời Kết</div>
+        <h2 class="text-2xl sm:text-3xl font-black text-white font-serif tracking-tight">
+          Đập Bỏ Tòa Sen Giả Hiệu – Bước Xuống Mặt Đường Và Chiến Đấu!
+        </h2>
+        <div class="space-y-4 leading-relaxed">
+          <p>
+            Hỡi những con người đang ngày ngày hít thở khói bụi của cuộc đời!
+          </p>
+          <p class="font-semibold text-white text-lg">
+            Đã đến lúc đập vỡ những bức tượng thần thánh ủ rũ ngồi trên tòa sen trong tâm trí bạn. Đã đến lúc chấm dứt những lời lảm nhảm về một thứ cõi Niết bàn bất động nằm ngoài không gian.
+          </p>
+          <p>
+            <b>Trần gian đầy thử thách, khốc liệt, cạnh tranh và bất công này CHÍNH LÀ NƠI DUY NHẤT BẠN ĐANG TỒN TẠI:</b>
+          </p>
+          <ul class="list-disc list-outside pl-5 space-y-1.5 text-sm sm:text-base text-slate-300">
+            <li>Hãy yêu lấy những giọt mồ hôi đang lăn trên trán bạn khi tăng ca.</li>
+            <li>Hãy yêu lấy vết chai trên tay bạn khi bạn lao động.</li>
+            <li>Hãy yêu lấy những thất bại đã từng quật ngã bạn, vì chúng đã lột trần sự ngây thơ của bạn và biến bạn thành một kẻ thép gai dạn dày sương gió.</li>
+          </ul>
+          <blockquote class="border-l-4 border-rose-600 bg-rose-950/30 p-6 rounded-r-2xl text-rose-200 text-lg sm:text-xl font-serif font-bold italic my-6">
+            "Khi bạn đứng thẳng lưng giữa dòng đời nghiệt ngã, không than vãn, không trốn chạy vào những triết lý thanh cao rởm, mà dũng mãnh lao động, kiếm tiền đàng hoàng, bảo bọc những người bạn yêu thương, và mỉm cười điềm tĩnh trước mọi biến thiên của số phận...<br><br>
+            KHI ĐÓ, BẠN KHÔNG CẦN PHẢI TÌM BRAHMAN NỮA.<br>
+            CHÍNH TRONG Ý CHÍ SỐNG VÀ LAO ĐỘNG HÙNG CƯỜNG ĐÓ, BẠN CHÍNH LÀ HIỆN THÂN SỐNG ĐỘNG NHẤT CỦA ĐẠI NGÃ TRÊN MẶT ĐẤT!"
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- Footer Sign-off -->
+      <footer class="pt-8 border-t border-slate-800 text-center text-xs text-slate-400 font-mono space-y-2 no-print">
+        <div>🏛️ VIỆN NGHIÊN CỨU TƯ TƯỞNG &bull; TRIẾT HỌC ĐƯỜNG PHỐ THỰC CHIẾN</div>
+        <div>Lưu trữ vĩnh viễn: <code class="text-rose-400">D:\Sach\Triet hoc\triet-hoc-duong-pho.html</code></div>
+      </footer>
+
+    </article>
+  </div>
+
+  <script>
+    // READING PROGRESS BAR
+    window.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (winScroll / height) * 100;
+      document.getElementById('progressBar').style.width = scrolled + '%';
+    });
+
+    // FONT SIZE CONTROLLER
+    let currentFontSize = 18;
+    function changeFontSize(delta) {
+      currentFontSize = Math.min(24, Math.max(14, currentFontSize + delta * 2));
+      const el = document.getElementById('articleContent');
+      el.style.fontSize = currentFontSize + 'px';
+    }
+
+    // SCROLLSPY FOR TABLE OF CONTENTS
+    const sections = document.querySelectorAll('article section');
+    const navLinks = document.querySelectorAll('.toc-link');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
